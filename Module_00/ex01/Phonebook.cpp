@@ -6,7 +6,7 @@
 /*   By: mdorr <mdorr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 10:52:37 by mdorr             #+#    #+#             */
-/*   Updated: 2023/08/02 22:45:35 by mdorr            ###   ########.fr       */
+/*   Updated: 2023/08/03 12:18:24 by mdorr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,17 +34,23 @@ void	Phonebook::set_contact(int index)
 	std::cout << "Darkest secret > ";
 	std::cin >> tmp;
 	contact.set_secret(tmp);
+	contact.index = index;
 
 	Phonebook::contacts[index] = contact;
 }
 
-void	Phonebook::print_contact(int index)
+Contact	Phonebook::get_contact(int index) const
+{
+	return (this->contacts[index]);
+}
+
+void	Phonebook::print_contact(int index) const
 {
 	std::cout << "first_name : " << this->contacts[index].get_firt_name() << std::endl;
 	std::cout << "last_name : " << this->contacts[index].get_last_name() << std::endl;
 	std::cout << "surname : " << this->contacts[index].get_surname() << std::endl;
 	std::cout << "phone nbr : " << this->contacts[index].get_phone_nbr() << std::endl;
-	std::cout << "secret : " << this->contacts[index].get_secret() << std::endl;
+	std::cout << "secret : " << this->contacts[index].get_secret();
 }
 
 // Contact member functions
@@ -110,21 +116,21 @@ std::string	Contact::get_secret(void) const
 
 Phonebook::Phonebook()
 {
-	std::cout << "Created Phonebook" << std::endl;
+	// std::cout << "Created Phonebook" << std::endl;
 }
 
 Phonebook::~Phonebook()
 {
-	std::cout << "Destroyed Phonebook" << std::endl;
+	// std::cout << "Destroyed Phonebook" << std::endl;
 }
 
 Contact::Contact()
 {
-	std::cout << "Created Contact" << std::endl;
+	// std::cout << "Created Contact" << std::endl;
 }
 
 Contact::~Contact()
 {
-	std::cout << "Destroyed Contact" << std::endl;
+	// std::cout << "Destroyed Contact" << std::endl;
 }
 

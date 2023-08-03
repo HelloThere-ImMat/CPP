@@ -6,7 +6,7 @@
 /*   By: mdorr <mdorr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 10:52:40 by mdorr             #+#    #+#             */
-/*   Updated: 2023/08/02 22:37:54 by mdorr            ###   ########.fr       */
+/*   Updated: 2023/08/03 12:03:43 by mdorr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ private:
 	std::string	_secret;
 
 public:
-	Contact(/* args */);
+	Contact();
 	~Contact();
 
 	void		set_first_name(std::string str);
@@ -52,6 +52,6 @@ class Phonebook
 	Phonebook();
 	~Phonebook();
 	void	set_contact(int index);
-	void	print_contact(int index);
-	Contact	get_contact(void) const;
+	void	print_contact(int index) const;
+	Contact	get_contact(int index) const;
 };
