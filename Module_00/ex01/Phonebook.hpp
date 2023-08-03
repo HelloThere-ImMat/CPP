@@ -6,9 +6,12 @@
 /*   By: mdorr <mdorr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 10:52:40 by mdorr             #+#    #+#             */
-/*   Updated: 2023/08/03 12:03:43 by mdorr            ###   ########.fr       */
+/*   Updated: 2023/08/03 14:38:16 by mdorr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef		PHONEBOOK_HPP
+# define	PHONEBOOK_HPP
 
 #include <string>
 #include <iostream>
@@ -55,3 +58,5 @@ class Phonebook
 	void	print_contact(int index) const;
 	Contact	get_contact(int index) const;
 };
+
+#endif
