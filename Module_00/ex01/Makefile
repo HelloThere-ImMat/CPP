@@ -8,6 +8,7 @@ CC			=	g++
 FLAGS		+=	-Wall
 FLAGS		+=	-Wextra
 FLAGS		+=	-Werror
+FLAGS		+=	-std=c++98
 
 NAME		=	phonebook
 
