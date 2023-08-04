@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Phonebook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mdorr <mdorr@student.42.fr>                +#+  +:+       +#+        */
+/*   By: mat <mat@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 10:52:40 by mdorr             #+#    #+#             */
-/*   Updated: 2023/08/03 14:38:16 by mdorr            ###   ########.fr       */
+/*   Updated: 2023/08/04 08:43:29 by mat              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include <iostream>
 #include <iomanip>
 #include <stdbool.h>
+#include <stdlib.h>
 
 class Contact
 {

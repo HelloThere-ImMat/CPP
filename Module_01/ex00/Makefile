@@ -14,7 +14,7 @@ FLAGS		+=	-std=c++98
 
 NAME		=	BraiiiiiiinnnzzzZ
 
-PATH_OBJS	+= objs/
+PATH_OBJS	+= objs
 OBJS		+= $(patsubst %.cpp, $(PATH_OBJS)/%.o, $(SRCS))
 
 all		: $(NAME)
@@ -24,7 +24,7 @@ $(NAME)	: $(OBJS)
 
 $(OBJS)	: $(PATH_OBJS)/%.o : %.cpp Makefile
 	mkdir -p $(PATH_OBJS)
-	$(CC) $(FLAGS) -c $< -o $@ -I $(DEPS)
+	$(CC) $(FLAGS) -c $< -o $@ -I .
 
 clean	:
 	rm -r $(PATH_OBJS)
