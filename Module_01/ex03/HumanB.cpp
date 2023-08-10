@@ -1,36 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mat <mat@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/04 07:53:42 by mdorr             #+#    #+#             */
-/*   Updated: 2023/08/05 11:41:26 by mat              ###   ########.fr       */
+/*   Created: 2023/08/05 11:49:46 by mat               #+#    #+#             */
+/*   Updated: 2023/08/09 20:00:43 by mat              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef	ZOMBIE_HPP
-# define	ZOMBIE_HPP
+#include "HumanB.hpp"
 
-#include <iostream>
-#include <string>
-
-// Class
-
-class Zombie
+HumanB::HumanB(std::string name)
 {
-	private:
-		std::string _name;
-	public:
-		Zombie(void);
-		~Zombie(void);
-		void announce(void) const;
-		void assign_name(std::string name);
-};
+	this->_name = name;
+	this->_weaponPTR = NULL;
+}
 
-// Prototypes
+HumanB::~HumanB()
+{
+}
 
-Zombie*	zombieHorde( int N, std::string name );
+void	HumanB::attack() const
+{
+	std::cout << this->_name << " attacks with their " << this->_weaponPTR->getType();
+	std::cout << std::endl;
+}
 
-#endif
+void	HumanB::setWeapon(Weapon &weapon)
+{
+	this->_weaponPTR = &weapon;
+}

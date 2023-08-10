@@ -1,8 +1,4 @@
 SRCS += main.cpp
-SRCS += Zombie.cpp
-SRCS += zombieHorde.cpp
-
-DEPS +=	Zombie.hpp
 
 CC			=	g++
 
@@ -11,7 +7,7 @@ FLAGS		+=	-Wextra
 FLAGS		+=	-Werror
 FLAGS		+=	-std=c++98
 
-NAME		=	horde
+NAME		=	brain
 
 PATH_OBJS	+= objs
 OBJS		+= $(patsubst %.cpp, $(PATH_OBJS)/%.o, $(SRCS))
@@ -23,7 +19,7 @@ $(NAME)	: $(OBJS)
 
 $(OBJS)	: $(PATH_OBJS)/%.o : %.cpp Makefile
 	mkdir -p $(PATH_OBJS)
-	$(CC) $(FLAGS) -c $< -o $@ -I .
+	$(CC) $(FLAGS) -c $< -o $@
 
 clean	:
 	rm -r $(PATH_OBJS)
