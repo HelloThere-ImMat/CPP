@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanA.cpp                                         :+:      :+:    :+:   */
+/*   newSed.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdorr <mdorr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/05 11:39:33 by mat               #+#    #+#             */
-/*   Updated: 2023/08/10 14:27:24 by mdorr            ###   ########.fr       */
+/*   Created: 2023/08/10 14:33:18 by mdorr             #+#    #+#             */
+/*   Updated: 2023/08/10 14:50:30 by mdorr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanA.hpp"
+#include <iostream>
+#include <string>
+#include <string.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
 
-HumanA::HumanA(std::string name, Weapon &weapon): _name(name), _weaponREF(&weapon)
-{
-}
+# define INVALID_ARG_NB	"This program takes 3 parameters only"
+# define EXIT_SUCCESS 0
+# define EXIT_FAILURE 1
 
-HumanA::~HumanA()
+typedef struct s_data
 {
-}
-
-void	HumanA::attack() const
-{
-	std::cout << this->_name << " attacks with their " << this->_weaponREF->getType();
-	std::cout << std::endl;
-}
+	int			file_fd;
+	std::string	s1;
+	std::string	s2;
+}				t_data;
