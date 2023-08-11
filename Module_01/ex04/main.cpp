@@ -30,13 +30,15 @@ void	copy_everything(t_data data)
 	std::ofstream	writeFlux(data.replaceFileName, std::ios::out);
 	std::string		line;
 
-	std::getline(readFlux, line);
-	writeFlux << line << std::endl;
+	//std::getline(readFlux, line);
+	readFlux >> line;
+	writeFlux << line;
 	while (line.empty() == false)
 	{
-		std::getline(readFlux, line);
+		std::cout << line << std::endl;
+		readFlux >> line;
 		//replace_in_line(line, data);
-		writeFlux << line << std::endl;
+		writeFlux << line;
 	}
 }
 
