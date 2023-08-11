@@ -6,7 +6,7 @@
 /*   By: mdorr <mdorr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 14:40:47 by mdorr             #+#    #+#             */
-/*   Updated: 2023/08/03 14:49:24 by mdorr            ###   ########.fr       */
+/*   Updated: 2023/08/11 15:05:45 by mdorr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,27 +16,27 @@
 
 //		Non member functs
 
-static int	getNbAccounts( void )
+int	Account::getNbAccounts( void )
 {
-	return (0);
+	return (Account::_nbAccounts);
 }
 
-static int	getTotalAmount( void )
+int	Account::getTotalAmount( void )
 {
-	return (0);
+	return (Account::_totalAmount);
 }
 
-static int	getNbDeposits( void )
+int	Account::getNbDeposits( void )
 {
-	return (0);
+	return (Account::_totalNbDeposits);
 }
 
-static int	getNbWithdrawals( void )
+int	Account::getNbWithdrawals( void )
 {
-	return (0);
+	return (Account::_totalNbWithdrawals);
 }
 
-static void	displayAccountsInfos( void )
+void	Account::displayAccountsInfos( void )
 {
 	return ;
 }
@@ -45,12 +45,22 @@ static void	displayAccountsInfos( void )
 
 void	Account::makeDeposit( int deposit )
 {
+	this->_amount += deposit;
+	this->_nbDeposits++;
 	return ;
 }
 
 bool	Account::makeWithdrawal( int withdrawal )
 {
-	return (true);
+	if (withdrawal > this->_amount)
+	{
+		this->_amount -= withdrawal;
+		this->_nbWithdrawals++;
+		return (true);
+	}
+	else
+		return (false);
+
 }
 
 int		Account::checkAmount( void ) const
@@ -83,4 +93,3 @@ static void	_displayTimestamp( void )
 {
 	return ;
 }
-

@@ -1,7 +1,7 @@
-SRCS += main.cpp
-SRCS += utils.cpp
+SRCS += Account.cpp
+SRCS += test.cpp
 
-DEPS += newSed.hpp
+DEPS += Account.hpp
 
 CC			=	g++
 
@@ -10,7 +10,7 @@ FLAGS		+=	-Wextra
 FLAGS		+=	-Werror
 FLAGS		+=	-std=c++98
 
-NAME		=	newSed
+NAME		=	phonebook
 
 PATH_OBJS	+= objs
 OBJS		+= $(patsubst %.cpp, $(PATH_OBJS)/%.o, $(SRCS))

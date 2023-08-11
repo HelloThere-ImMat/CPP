@@ -6,16 +6,15 @@
 /*   By: mdorr <mdorr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/10 14:33:18 by mdorr             #+#    #+#             */
-/*   Updated: 2023/08/10 14:50:30 by mdorr            ###   ########.fr       */
+/*   Updated: 2023/08/11 16:13:40 by mdorr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <string>
 #include <string.h>
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <fcntl.h>
+#include <cstdlib>
+#include <fstream>
 
 # define INVALID_ARG_NB	"This program takes 3 parameters only"
 # define EXIT_SUCCESS 0
@@ -23,7 +22,12 @@
 
 typedef struct s_data
 {
-	int			file_fd;
+	char		*fileName;
+	char		*replaceFileName;
 	std::string	s1;
 	std::string	s2;
 }				t_data;
+
+int 	get_args(t_data *data, char **argv);
+char	*ft_strjoin(const char *s1, const char *s2);
+int		print_error(const char *error);

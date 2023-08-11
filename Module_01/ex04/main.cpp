@@ -6,46 +6,50 @@
 /*   By: mdorr <mdorr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/10 14:32:34 by mdorr             #+#    #+#             */
-/*   Updated: 2023/08/10 14:55:41 by mdorr            ###   ########.fr       */
+/*   Updated: 2023/08/11 16:40:24by mdorr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <newSed.hpp>
 
-int	print_error(const char *error)
-{
-	std::cout << "Error" << std::endl;
-	std::cout << error << std::endl;
-	return (EXIT_FAILURE);
-}
+//std::string	replace_in_line(std::string line, t_data data)
+//{
+//	std::string	new_string;
+//	int			i;
 
-int get_args(t_data *data, char **argv)
+//	i = 0;
+//	while (line[i] != ' ')
+//	{
+
+//	}
+//}
+
+void	copy_everything(t_data data)
 {
-	char *tmp;
-	data->file_fd = open(argv[1], O_RDONLY);
-	if (data->file_fd == -1)
-		return (print_error("file cannot be opened"));
-	tmp = strdup(argv[2]);
-	if (tmp == NULL)
-		return (print_error("malloc error"));
-	data->s1 = tmp;
-	tmp = strdup(argv[3]);
-	if (tmp == NULL)
-		return (print_error("malloc error"));
-	data->s2 = tmp;
-	return (EXIT_SUCCESS);
+	std::ifstream	readFlux(data.fileName);
+	std::ofstream	writeFlux(data.replaceFileName, std::ios::out);
+	std::string		line;
+
+	std::getline(readFlux, line);
+	writeFlux << line << std::endl;
+	while (line.empty() == false)
+	{
+		std::getline(readFlux, line);
+		//replace_in_line(line, data);
+		writeFlux << line << std::endl;
+	}
 }
 
 int main(int argc, char **argv)
 {
 	t_data data;
+	std::string		line;
 
 	if (argc != 4)
 		return (print_error(INVALID_ARG_NB));
 	if (get_args(&data, argv) == EXIT_FAILURE)
-		return (EXIT_FAILURE);
-	std::cout << data.s1 << std::endl;
-	std::cout << data.s2 << std::endl;
-	std::cout << data.file_fd << std::endl;
+			return (EXIT_FAILURE);
+	copy_everything(data);
+	delete data.replaceFileName;
 	return (EXIT_SUCCESS);
 }
