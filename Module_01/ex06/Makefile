@@ -1,11 +1,7 @@
 SRCS += main.cpp
-SRCS += HumanA.cpp
-SRCS += HumanB.cpp
-SRCS += Weapon.cpp
+SRCS += Harl.cpp
 
-DEPS += Weapon.hpp
-DEPS +=	HumanA.hpp
-DEPS +=	HumanB.hpp
+DEPS += Harl.hpp
 
 CC			=	g++
 
@@ -14,7 +10,7 @@ FLAGS		+=	-Wextra
 FLAGS		+=	-Werror
 FLAGS		+=	-std=c++98
 
-NAME		=	fight
+NAME		=	HarlFilter
 
 PATH_OBJS	+= objs
 OBJS		+= $(patsubst %.cpp, $(PATH_OBJS)/%.o, $(SRCS))
