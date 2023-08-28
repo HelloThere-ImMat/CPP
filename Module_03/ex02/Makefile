@@ -1,9 +1,11 @@
-SRCS += ClapTrap.cpp
 SRCS += main.cpp
+SRCS += ClapTrap.cpp
 SRCS += ScavTrap.cpp
+SRCS += FragTrap.cpp
 
 DEPS += ClapTrap.hpp
 DEPS += ScavTrap.hpp
+DEPS += FragTrap.hpp
 
 CC			=	g++
 
@@ -12,7 +14,7 @@ FLAGS		+=	-Wextra
 FLAGS		+=	-Werror
 FLAGS		+=	-std=c++98
 
-NAME		=	scavTrap
+NAME		=	fragTrap
 
 PATH_OBJS	+= objs
 OBJS		+= $(patsubst %.cpp, $(PATH_OBJS)/%.o, $(SRCS))

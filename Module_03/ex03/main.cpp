@@ -5,19 +5,30 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdorr <mdorr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/14 15:14:50 by mdorr             #+#    #+#             */
-/*   Updated: 2023/08/28 11:10:11 by mdorr            ###   ########.fr       */
+/*   Created: 2023/08/23 17:46:52 by mat               #+#    #+#             */
+/*   Updated: 2023/08/28 11:19:23 by mdorr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Harl.hpp"
+#include "FragTrap.hpp"
 
-int main(void)
+int	main(void)
 {
-	Harl	h1;
+	ClapTrap	ctNb1("Babou");
+	ClapTrap	cpyNb1(ctNb1);
+	ClapTrap	assigned("Assigned");
+	ScavTrap	scav("blata");
+	FragTrap	frag("Paul");
+	std::string	target1 = "Dragon";
+	std::string target2 = "Mouse";
 
-	h1.complain("debug");
-	h1.complain("error");
-	h1.complain("eror");
+	ctNb1.attack(target1);
+	cpyNb1.attack(target2);
+	scav.attack(target1);
+	cpyNb1 = assigned;
+	cpyNb1.attack(target2);
+	frag.highFivesGuys();
+	frag.attack(target1);
+
 	return (0);
 }

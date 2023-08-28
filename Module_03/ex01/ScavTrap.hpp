@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mat <mat@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: mdorr <mdorr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 17:52:04 by mat               #+#    #+#             */
-/*   Updated: 2023/08/26 11:58:53 by mat              ###   ########.fr       */
+/*   Updated: 2023/08/28 11:01:44 by mdorr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,9 @@
 class ScavTrap : public ClapTrap {
 	public :
 		ScavTrap(std::string name);
-		//ScavTrap(ScavTrap &other);
+		ScavTrap(const ScavTrap &other);
 		~ScavTrap();
-		std::string get_lifepoints(void);
-	private :
-		std::string _name;
-
+		ScavTrap &operator=(const ScavTrap &other);
+		void 	attack(std::string &target);
+		void	guardGate();
 };

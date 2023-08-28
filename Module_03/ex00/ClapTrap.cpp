@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mat <mat@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: mdorr <mdorr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 17:15:16 by mat               #+#    #+#             */
-/*   Updated: 2023/08/23 17:51:08 by mat              ###   ########.fr       */
+/*   Updated: 2023/08/28 10:53:56 by mdorr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,31 +16,41 @@
 
 ClapTrap::ClapTrap(std::string name) : _name(name), _hitPoint(10), _energyPoint(10), _attackDamage(0)
 {
-	std::cout << "Default constructor called" << std::endl;
+	std::cout << "ClapTrap default constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &other) : _name(other._name), _hitPoint(other._hitPoint), _energyPoint(other._energyPoint), _attackDamage(other._attackDamage)
 {
-	std::cout << "Copy constructor called" << std::endl;
+	std::cout << "ClapTrap copy constructor called" << std::endl;
 }
 
 //Destructor
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "Destructor called" << std::endl;
+	std::cout << "ClapTrap destructor called" << std::endl;
+}
+
+// Operator Overload
+
+ClapTrap &ClapTrap::operator=(const ClapTrap &other)
+{
+	this->_name = other._name;
+	return (*this);
 }
 
 // Member functs
 
-void ClapTrap::attack(ClapTrap& target)
+void ClapTrap::attack(std::string &target)
 {
-	if (this->_hitPoint > 0 && this->_energyPoint > 0)
-		target.takeDamage(this->_attackDamage);
-	this->_energyPoint--;
-	std::cout << "ClapTrap " << this->_name << " attacks " << target._name 
-		<< ", causing " << this->_attackDamage << " points of damage!" << std::endl;
+	if (this->_energyPoint && this->_hitPoint)
+	{
+		this->_energyPoint--;
+		std::cout << "ClapTrap " << this->_name << " attacks " << target
+			<< ", causing " << this->_attackDamage << " points of damage!" << std::endl;
+	}
 }
+
 
 void ClapTrap::takeDamage(unsigned int amount)
 {

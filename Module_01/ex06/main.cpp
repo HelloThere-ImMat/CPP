@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mat <mat@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: mdorr <mdorr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 20:42:52 by mat               #+#    #+#             */
-/*   Updated: 2023/08/14 21:21:03 by mat              ###   ########.fr       */
+/*   Updated: 2023/08/28 11:03:13 by mdorr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int main(int ac, char **av)
 				h1.complain("ERROR");
 				break ;
 			case 4 :
-				std::cout << "I don't recognize this mode";
+				std::cout << "I don't recognize this mode" << std::endl;
 				break ;
 		}
 	}

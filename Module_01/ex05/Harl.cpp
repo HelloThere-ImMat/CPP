@@ -6,7 +6,7 @@
 /*   By: mdorr <mdorr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 15:18:58 by mdorr             #+#    #+#             */
-/*   Updated: 2023/08/14 16:45:18 by mdorr            ###   ########.fr       */
+/*   Updated: 2023/08/28 11:09:16 by mdorr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,13 @@ void Harl::complain(std::string level)
 	int	i;
 
 	i = 0;
-	while (level.compare(level_tab[i]) != 0)
+	while (i <= 3 && level.compare(level_tab[i]) != 0)
 		i++;
+	if (i > 3)
+	{
+		std::cout << "Wrong harl setting in main" << std::endl;
+		return ;
+	}
 	(this->*complainFunc[i])();
 }
 

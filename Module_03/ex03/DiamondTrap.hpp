@@ -1,30 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
+/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdorr <mdorr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/23 17:05:58 by mat               #+#    #+#             */
-/*   Updated: 2023/08/26 15:15:17 by mdorr            ###   ########.fr       */
+/*   Created: 2023/08/28 11:33:29 by mdorr             #+#    #+#             */
+/*   Updated: 2023/08/28 11:58:09 by mdorr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#include "FragTrap.hpp"
 
-class ClapTrap
+class DiamondTrap : public ScavTrap, public FragTrap
 {
-	private :
-		std::string _name;
-		int			_hitPoint;
-		int			_energyPoint;
-		int			_attackDamage;
-	public :
-		ClapTrap(std::string name);
-		ClapTrap(const ClapTrap &other);
-		~ClapTrap();
-		ClapTrap &operator=(const ClapTrap &other);
-		void attack(std::string &target);
-		void takeDamage(unsigned int amount);
-		void beRepaired(unsigned int amount);
+	DiamondTrap(std::string name);
+	DiamondTrap(const DiamondTrap &other);
+	~DiamondTrap();
+	//DiamondTrap &operator=(const DiamondTrap &other);
+	void 	attack(std::string &target);
 };
