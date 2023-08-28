@@ -6,7 +6,7 @@
 /*   By: mdorr <mdorr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 11:39:13 by mdorr             #+#    #+#             */
-/*   Updated: 2023/08/28 13:21:54 by mdorr            ###   ########.fr       */
+/*   Updated: 2023/08/28 14:13:25 by mdorr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,11 @@ DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name")
 	return ;
 }
 
-//DiamondTrap::DiamondTrap(const DiamondTrap &other) : ClapTrap(other._name + "_clap_name"), ScavTrap(), FragTrap()
-//{
-//	this->_name = other._name;
-//	std::cout << "DiamondTrap copy constructor called" << std::endl;
-//}
+DiamondTrap::DiamondTrap(const DiamondTrap &other) : ClapTrap(other._name + "_clap_name"), ScavTrap(), FragTrap()
+{
+	this->_name = other._name;
+	std::cout << "DiamondTrap copy constructor called" << std::endl;
+}
 
 // Destructor
 
@@ -40,11 +40,12 @@ DiamondTrap::~DiamondTrap()
 
 // Operator
 
-//DiamondTrap &DiamondTrap::operator=(const DiamondTrap &other)
-//{
-//	this->_name = other.ClapTrap::_name;
-//	return (*this);
-//}
+DiamondTrap &DiamondTrap::operator=(const DiamondTrap &other)
+{
+	this->_name = other._name;
+	this->ClapTrap::_name = other.ClapTrap::_name;
+	return (*this);
+}
 
 // Member Functs
 
