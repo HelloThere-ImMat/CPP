@@ -15,6 +15,7 @@ FLAGS		+=	-Wall
 FLAGS		+=	-Wextra
 FLAGS		+=	-Werror
 FLAGS		+=	-std=c++98
+FLAGS		+=	-Wshadow
 
 NAME		=	fragTrap
 

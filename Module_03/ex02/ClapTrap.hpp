@@ -6,11 +6,12 @@
 /*   By: mdorr <mdorr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 17:05:58 by mat               #+#    #+#             */
-/*   Updated: 2023/08/28 11:38:56 by mdorr            ###   ########.fr       */
+/*   Updated: 2023/08/28 12:41:05 by mdorr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <string>
 
 class ClapTrap
 {

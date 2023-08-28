@@ -6,7 +6,7 @@
 /*   By: mdorr <mdorr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/25 18:59:25 by mat               #+#    #+#             */
-/*   Updated: 2023/08/28 11:21:10 by mdorr            ###   ########.fr       */
+/*   Updated: 2023/08/28 13:15:31 by mdorr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,14 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name)
 FragTrap::FragTrap(const FragTrap &other) : ClapTrap(other._name)
 {
 	std::cout << "FragTrap copy constructor called" << std::endl;
+}
+
+FragTrap::FragTrap() : ClapTrap("Empty")
+{
+	this->_hitPoint = 100;
+	this->_energyPoint = 100;
+	this->_attackDamage = 30;
+	std::cout << "FragTrap empty constructor called" << std::endl;
 }
 
 // Destructor
