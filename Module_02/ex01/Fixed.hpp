@@ -6,9 +6,12 @@
 /*   By: mdorr <mdorr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 14:52:45 by mdorr             #+#    #+#             */
-/*   Updated: 2023/08/22 18:17:49 by mdorr            ###   ########.fr       */
+/*   Updated: 2023/08/29 13:35:45 by mdorr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+# ifndef FIXED_HPP
+# define FIXED_HPP
 
 class Fixed
 {
@@ -26,5 +29,7 @@ class Fixed
 		void	setRawBits (int const raw);
 		float	toFloat(void);
 		int		toInt(void);
-		
+
 };
+
+#endif

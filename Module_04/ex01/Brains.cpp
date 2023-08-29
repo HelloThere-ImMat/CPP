@@ -6,10 +6,12 @@
 
 Brains::Brains()
 {
+	std::cout << "Brains default constructor called" << std::endl;
 }
 
 Brains::Brains( const Brains & src )
 {
+	std::cout << "Brain copy constructor called" << std::endl;
 }
 
 
@@ -19,6 +21,7 @@ Brains::Brains( const Brains & src )
 
 Brains::~Brains()
 {
+	std::cout << "Brains destructor called" << std::endl;
 }
 
 
@@ -28,28 +31,6 @@ Brains::~Brains()
 
 Brains &				Brains::operator=( Brains const & rhs )
 {
-	//if ( this != &rhs )
-	//{
-		//this->_value = rhs.getValue();
-	//}
+	*this = rhs;
 	return *this;
 }
-
-std::ostream &			operator<<( std::ostream & o, Brains const & i )
-{
-	//o << "Value = " << i.getValue();
-	return o;
-}
-
-
-/*
-** --------------------------------- METHODS ----------------------------------
-*/
-
-
-/*
-** --------------------------------- ACCESSOR ---------------------------------
-*/
-
-
-/* ************************************************************************** */

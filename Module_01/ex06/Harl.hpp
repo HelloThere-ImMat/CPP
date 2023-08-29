@@ -6,9 +6,12 @@
 /*   By: mdorr <mdorr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 15:15:29 by mdorr             #+#    #+#             */
-/*   Updated: 2023/08/14 16:26:09 by mdorr            ###   ########.fr       */
+/*   Updated: 2023/08/29 13:35:03 by mdorr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+# ifndef HARL_HPP
+# define HARL_HPP
 
 #include <iostream>
 #include <string>
@@ -33,3 +36,5 @@ class Harl
 		~Harl();
 
 };
+
+#endif

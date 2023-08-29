@@ -6,9 +6,12 @@
 /*   By: mdorr <mdorr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 17:05:58 by mat               #+#    #+#             */
-/*   Updated: 2023/08/28 12:41:15 by mdorr            ###   ########.fr       */
+/*   Updated: 2023/08/29 15:40:29 by mdorr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+# ifndef CLAPTRAP_HPP
+# define CLAPTRAP_HPP
 
 #include <iostream>
 #include <string>
@@ -29,3 +32,5 @@ class ClapTrap
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
 };
+
+#endif

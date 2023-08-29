@@ -6,9 +6,13 @@
 /*   By: mdorr <mdorr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 14:18:08 by mdorr             #+#    #+#             */
-/*   Updated: 2023/08/29 12:47:04 by mdorr            ###   ########.fr       */
+/*   Updated: 2023/08/29 13:32:04 by mdorr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+
+#ifndef ANIMALS_HPP
+# define ANIMALS_HPP
 
 #include <iostream>
 #include <string>
@@ -45,3 +49,5 @@ class Cat : public Animal
 		Cat &operator=(const Cat &other);
 		void makeSound() const;
 };
+
+#endif

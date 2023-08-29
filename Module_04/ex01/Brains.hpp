@@ -11,7 +11,6 @@ class Brains
 		Brains();
 		Brains( Brains const & src );
 		~Brains();
-
 		Brains &		operator=( Brains const & rhs );
 
 	private:

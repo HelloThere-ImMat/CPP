@@ -6,9 +6,12 @@
 /*   By: mdorr <mdorr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/29 12:55:56 by mdorr             #+#    #+#             */
-/*   Updated: 2023/08/29 13:01:38 by mdorr            ###   ########.fr       */
+/*   Updated: 2023/08/29 13:32:33 by mdorr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef WRONGANIMAL_HPP
+# define WRONGANIMAL_HPP
 
 #include "Animals.hpp"
 
@@ -34,3 +37,5 @@ class WrongCat : public WrongAnimal
 		WrongCat &operator=(const WrongCat &other);
 		void makeSound() const;
 };
+
+#endif
