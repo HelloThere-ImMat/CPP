@@ -6,7 +6,7 @@
 /*   By: mdorr <mdorr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 14:52:45 by mdorr             #+#    #+#             */
-/*   Updated: 2023/08/30 11:41:59 by mdorr            ###   ########.fr       */
+/*   Updated: 2023/08/30 15:48:49 by mdorr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,10 @@ class Fixed
 		bool operator>=(const Fixed &other);
 		bool operator==(Fixed &other);
 		bool operator!=(Fixed &other);
+		void operator++(); //prefix
+		void operator++(int); //postfix (specified by the int as parameters)
+		void operator--();
+		void operator--(int);
 		// ainsi que ++Fixed, Fixed++, Fixed-- and --Fixed
 		~Fixed();
 		int		getRawBits (void);
@@ -46,9 +50,9 @@ class Fixed
 		float	toFloat(void) const;
 		int		toInt(void) const;
 		Fixed	&min(Fixed &f1, Fixed &f2);
-		Fixed	&min(const Fixed &f1, const Fixed &f2);
+		//Fixed	&min(const Fixed &f1, const Fixed &f2);
 		Fixed	&max(Fixed &f1, Fixed &f2);
-		Fixed	&max(const Fixed &f1, const Fixed &f2);
+		//Fixed	&max(const Fixed &f1, const Fixed &f2);
 };
 
 std::ostream& operator<<(std::ostream &os, const Fixed &other);

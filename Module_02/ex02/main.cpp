@@ -6,7 +6,7 @@
 /*   By: mdorr <mdorr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 11:33:45 by mdorr             #+#    #+#             */
-/*   Updated: 2023/08/30 11:51:53 by mdorr            ###   ########.fr       */
+/*   Updated: 2023/08/30 15:50:15 by mdorr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,9 @@ int main( void ) {
 	std::cout << a / b << std::endl;
 	std::cout << c - b << std::endl;
 
+	b++;
+	c++;
+	std::cout << "Post-incremented b is " << b << std::endl;
+	std::cout << "Post-incremented c is " << c << std::endl;
 	return 0;
 }

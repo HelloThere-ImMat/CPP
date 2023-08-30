@@ -6,7 +6,7 @@
 /*   By: mdorr <mdorr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 15:08:20 by mdorr             #+#    #+#             */
-/*   Updated: 2023/08/30 11:56:21 by mdorr            ###   ########.fr       */
+/*   Updated: 2023/08/30 15:48:37 by mdorr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -158,6 +158,26 @@ bool Fixed::operator!=(Fixed &other)
 	return (true);
 }
 
+void Fixed::operator++()
+{
+	++(this->_fixedNb);
+}
+
+void Fixed::operator++(int)
+{
+	(this->_fixedNb)++;
+}
+
+void Fixed::operator--()
+{
+	--(this->_fixedNb);
+}
+
+void Fixed::operator--(int)
+{
+	(this->_fixedNb)--;
+}
+
 std::ostream& operator<<(std::ostream &os, const Fixed &other)
 {
 	os << other.toFloat();
@@ -201,12 +221,12 @@ Fixed	&Fixed::min(Fixed &f1, Fixed &f2)
 	return (f2);
 }
 
-Fixed	&Fixed::min(const Fixed &f1, const Fixed &f2)
-{
-	if (f1 <= f2)
-		return (f1);
-	return ((Fixed)f2);
-}
+//Fixed	&Fixed::min(const Fixed &f1, const Fixed &f2)
+//{
+//	if (f1 <= f2)
+//		return (f1);
+//	return ((Fixed)f2);
+//}
 
 
 const int Fixed::_bitNb = 8;
