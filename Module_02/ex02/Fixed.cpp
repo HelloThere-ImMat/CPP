@@ -6,7 +6,7 @@
 /*   By: mdorr <mdorr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 15:08:20 by mdorr             #+#    #+#             */
-/*   Updated: 2023/08/29 18:53:58 by mdorr            ###   ########.fr       */
+/*   Updated: 2023/08/30 11:56:21 by mdorr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,12 +39,123 @@ Fixed::Fixed(const float floating_pt)
 
 // Operators Overload
 
-Fixed& Fixed::operator= (const Fixed &other)
+Fixed& Fixed::operator=(const Fixed &other)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
 	if (this != &other)
 		this->_fixedNb = other._fixedNb;
 	return (*this);
+}
+
+
+Fixed Fixed::operator+(const Fixed &other)
+{
+	float f1;
+	float f2;
+	float f3;
+
+	f1 = this->toFloat();
+	f2 = other.toFloat();
+	f3 = f1 + f2;
+	return (Fixed(f3));
+}
+
+Fixed Fixed::operator-(const Fixed &other)
+{
+	float f1;
+	float f2;
+	float f3;
+
+	f1 = this->toFloat();
+	f2 = other.toFloat();
+	f3 = f1 - f2;
+	return (Fixed(f3));
+}
+
+Fixed Fixed::operator/(const Fixed &other)
+{
+	float f1;
+	float f2;
+	float f3;
+
+	f1 = this->toFloat();
+	f2 = other.toFloat();
+	f3 = f1 / f2;
+	return (Fixed(f3));
+}
+
+Fixed Fixed::operator*(const Fixed &other)
+{
+	float f1;
+	float f2;
+	float f3;
+
+	f1 = this->toFloat();
+	f2 = other.toFloat();
+	f3 = f1 * f2;
+	return (Fixed(f3));
+}
+
+bool Fixed::operator<(const Fixed &other)
+{
+	float f1;
+	float f2;
+
+	f1 = this->toFloat();
+	f2 = other.toFloat();
+	if (f1 < f2)
+		return (true);
+	return (false);
+}
+
+bool Fixed::operator>(const Fixed &other)
+{
+	float f1;
+	float f2;
+
+	f1 = this->toFloat();
+	f2 = other.toFloat();
+	if (f1 > f2)
+		return (true);
+	return (false);
+}
+
+bool Fixed::operator<=(const Fixed &other)
+{
+	float f1;
+	float f2;
+
+	f1 = this->toFloat();
+	f2 = other.toFloat();
+	if (f1 <= f2)
+		return (true);
+	return (false);
+}
+
+bool Fixed::operator>=(const Fixed &other)
+{
+	float f1;
+	float f2;
+
+	f1 = this->toFloat();
+	f2 = other.toFloat();
+	if (f1 >= f2)
+		return (true);
+	return (false);
+}
+
+bool Fixed::operator==(Fixed &other)
+{
+	if (this->_fixedNb == other._fixedNb)
+		return (true);
+	return (false);
+}
+
+bool Fixed::operator!=(Fixed &other)
+{
+	if (this->_fixedNb == other._fixedNb)
+		return (false);
+	return (true);
 }
 
 std::ostream& operator<<(std::ostream &os, const Fixed &other)
@@ -57,7 +168,7 @@ std::ostream& operator<<(std::ostream &os, const Fixed &other)
 
 Fixed::~Fixed()
 {
-	std::cout << "Fixed destructor called" << std::endl;
+	std::cout << "Fixed destructor called for " << this->toInt() << std::endl;
 }
 
 //Public Functs
@@ -81,6 +192,20 @@ float	Fixed::toFloat(void) const
 int		Fixed::toInt(void) const
 {
 	return (this->_fixedNb >> 8);
+}
+
+Fixed	&Fixed::min(Fixed &f1, Fixed &f2)
+{
+	if (f1 <= f2)
+		return (f1);
+	return (f2);
+}
+
+Fixed	&Fixed::min(const Fixed &f1, const Fixed &f2)
+{
+	if (f1 <= f2)
+		return (f1);
+	return ((Fixed)f2);
 }
 
 

@@ -22,7 +22,7 @@ $(OBJS)	: $(PATH_OBJS)/%.o : %.cpp Makefile
 	$(CC) $(FLAGS) -c $< -o $@
 
 clean	:
-	rm -r $(PATH_OBJS)
+	rm -rf $(PATH_OBJS)
 
 fclean	:	clean
 	rm -f $(NAME)
@@ -30,5 +30,3 @@ fclean	:	clean
 re		:	fclean all
 
 .PHONY	: all clean fclean re
-
-
