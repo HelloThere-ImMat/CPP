@@ -3,7 +3,7 @@ SRCS += utils.cpp
 
 DEPS += newSed.hpp
 
-CC			=	g++
+CC			=	c++
 
 FLAGS		+=	-Wall
 FLAGS		+=	-Wextra

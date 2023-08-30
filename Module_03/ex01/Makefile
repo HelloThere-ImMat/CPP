@@ -5,7 +5,7 @@ SRCS += ScavTrap.cpp
 DEPS += ClapTrap.hpp
 DEPS += ScavTrap.hpp
 
-CC			=	g++
+CC			=	c++
 
 FLAGS		+=	-Wall
 FLAGS		+=	-Wextra

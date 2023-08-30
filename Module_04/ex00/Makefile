@@ -5,7 +5,7 @@ SRCS += WrongAnimal.cpp
 DEPS +=	Animals.hpp
 DEPS += WrongAnimal.hpp
 
-CC			=	g++
+CC			=	c++
 
 FLAGS		+=	-Wall
 FLAGS		+=	-Wextra

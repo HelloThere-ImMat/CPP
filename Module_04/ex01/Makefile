@@ -1,11 +1,13 @@
-SRCS += ../ex00/Animals.cpp
-SRCS += ../ex00/WrongAnimal.cpp
+SRCS += Animals.cpp
+SRCS += WrongAnimal.cpp
+SRCS += Brains.cpp
 SRCS += main.cpp
 
-DEPS +=	../ex00/Animals.hpp
-DEPS += ../ex00/WrongAnimal.hpp
+DEPS +=	Animals.hpp
+DEPS += Brains.hpp
+DEPS += WrongAnimal.hpp
 
-CC			=	g++
+CC			=	c++
 
 FLAGS		+=	-Wall
 FLAGS		+=	-Wextra

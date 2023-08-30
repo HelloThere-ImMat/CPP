@@ -9,7 +9,7 @@ DEPS += ScavTrap.hpp
 DEPS += FragTrap.hpp
 DEPS += DiamondTrap.cpp
 
-CC			=	g++
+CC			=	c++
 
 FLAGS		+=	-Wall
 FLAGS		+=	-Wextra

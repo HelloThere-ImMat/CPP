@@ -1,17 +1,18 @@
-#ifndef BRAINS_HPP
-# define BRAINS_HPP
+#ifndef BRAIN_HPP
+# define BRAIN_HPP
 
-#include "../ex00/WrongAnimal.hpp"
+#include <string>
+#include <iostream>
 
-class Brains
+class Brain
 {
 
 	public:
 
-		Brains();
-		Brains( Brains const & src );
-		~Brains();
-		Brains &		operator=( Brains const & rhs );
+		Brain();
+		Brain( Brain const & src );
+		~Brain();
+		Brain &		operator=( Brain const & rhs );
 
 	private:
 		std::string ideas[100];

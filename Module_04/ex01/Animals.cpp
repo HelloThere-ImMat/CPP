@@ -6,7 +6,7 @@
 /*   By: mdorr <mdorr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 14:18:15 by mdorr             #+#    #+#             */
-/*   Updated: 2023/08/28 16:02:02 by mdorr            ###   ########.fr       */
+/*   Updated: 2023/08/30 17:05:01 by mdorr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ Animal::~Animal()
 
 Animal::Animal(const Animal &other)
 {
-	*this = other;
+	this->_type = other._type;
 	std::cout << "Animal copy constructor called" << std::endl;
 }
 
@@ -53,22 +53,27 @@ Dog::Dog() : Animal()
 {
 	this->_type = "Dog";
 	std::cout << "Dog default constructor called" << std::endl;
+	this->_brain = new Brain;
 }
 
 Dog::~Dog()
 {
+	delete this->_brain;
 	std::cout << "Dog destructor called" << std::endl;
 }
 
 Dog::Dog(const Dog &other) : Animal()
 {
-	*this  = other;
+	this->_type = other._type;
 	std::cout << "Dog copy constructor called" << std::endl;
+	this->_brain = new Brain(*other._brain);
 }
 
 Dog &Dog::operator=(const Dog &other)
 {
-	*this = other;
+	this->_type = other._type;
+	delete this->_brain;
+	this->_brain = new Brain(*other._brain);
 	return (*this);
 }
 
@@ -83,22 +88,27 @@ Cat::Cat() : Animal()
 {
 	this->_type = "Cat";
 	std::cout << "Cat default constructor called" << std::endl;
+	this->_brain = new Brain;
 }
 
 Cat::~Cat()
 {
+	delete this->_brain;
 	std::cout << "Cat destructor called" << std::endl;
 }
 
 Cat::Cat(const Cat &other) : Animal()
 {
-	*this  = other;
+	this->_type = other._type;
 	std::cout << "Cat copy constructor called" << std::endl;
+	this->_brain = new Brain(*other._brain);
 }
 
 Cat &Cat::operator=(const Cat &other)
 {
-	*this = other;
+	this->_type = other._type;
+	delete this->_brain;
+	this->_brain = new Brain(*other._brain);
 	return (*this);
 }
 

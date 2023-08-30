@@ -7,7 +7,7 @@ DEPS += ClapTrap.hpp
 DEPS += ScavTrap.hpp
 DEPS += FragTrap.hpp
 
-CC			=	g++
+CC			=	c++
 
 FLAGS		+=	-Wall
 FLAGS		+=	-Wextra

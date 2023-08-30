@@ -4,7 +4,7 @@ SRCS += zombieHorde.cpp
 
 DEPS +=	Zombie.hpp
 
-CC			=	g++
+CC			=	c++
 
 FLAGS		+=	-Wall
 FLAGS		+=	-Wextra

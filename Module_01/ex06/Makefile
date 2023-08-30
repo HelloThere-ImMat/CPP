@@ -3,7 +3,7 @@ SRCS += Harl.cpp
 
 DEPS += Harl.hpp
 
-CC			=	g++
+CC			=	c++
 
 FLAGS		+=	-Wall
 FLAGS		+=	-Wextra

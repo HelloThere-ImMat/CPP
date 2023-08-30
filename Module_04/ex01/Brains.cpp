@@ -4,13 +4,19 @@
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-Brains::Brains()
+Brain::Brain()
 {
-	std::cout << "Brains default constructor called" << std::endl;
+	std::cout << "Brain default constructor called" << std::endl;
 }
 
-Brains::Brains( const Brains & src )
+Brain::Brain(const Brain & src)
 {
+	int i = 0;
+	while (i < 100)
+	{
+		this->ideas[i] = src.ideas[i];
+		i++;
+	}
 	std::cout << "Brain copy constructor called" << std::endl;
 }
 
@@ -19,9 +25,9 @@ Brains::Brains( const Brains & src )
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
 
-Brains::~Brains()
+Brain::~Brain()
 {
-	std::cout << "Brains destructor called" << std::endl;
+	std::cout << "Brain destructor called" << std::endl;
 }
 
 
@@ -29,7 +35,7 @@ Brains::~Brains()
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-Brains &				Brains::operator=( Brains const & rhs )
+Brain&	Brain::operator=(Brain const & rhs)
 {
 	*this = rhs;
 	return *this;

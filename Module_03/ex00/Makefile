@@ -3,7 +3,7 @@ SRCS += ClapTrap.cpp
 
 DEPS += ClapTrap.hpp
 
-CC			=	g++
+CC			=	c++
 
 FLAGS		+=	-Wall
 FLAGS		+=	-Wextra

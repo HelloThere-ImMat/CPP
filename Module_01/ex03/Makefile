@@ -7,7 +7,7 @@ DEPS += Weapon.hpp
 DEPS +=	HumanA.hpp
 DEPS +=	HumanB.hpp
 
-CC			=	g++
+CC			=	c++
 
 FLAGS		+=	-Wall
 FLAGS		+=	-Wextra

@@ -1,6 +1,6 @@
 SRCS += main.cpp
 
-CC			=	g++
+CC			=	c++
 
 FLAGS		+=	-Wall
 FLAGS		+=	-Wextra

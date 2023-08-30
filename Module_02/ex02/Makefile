@@ -3,7 +3,7 @@ SRCS += Fixed.cpp
 
 DEPS += Fixed.hpp
 
-CC			=	g++
+CC			=	c++
 
 FLAGS		+=	-Wall
 FLAGS		+=	-Wextra

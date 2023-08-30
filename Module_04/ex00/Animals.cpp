@@ -6,7 +6,7 @@
 /*   By: mdorr <mdorr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 14:18:15 by mdorr             #+#    #+#             */
-/*   Updated: 2023/08/28 16:02:02 by mdorr            ###   ########.fr       */
+/*   Updated: 2023/08/30 16:45:57 by mdorr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ Animal::~Animal()
 
 Animal::Animal(const Animal &other)
 {
-	*this = other;
+	this->_type = other._type;
 	std::cout << "Animal copy constructor called" << std::endl;
 }
 
@@ -62,13 +62,13 @@ Dog::~Dog()
 
 Dog::Dog(const Dog &other) : Animal()
 {
-	*this  = other;
+	this->_type  = other._type;
 	std::cout << "Dog copy constructor called" << std::endl;
 }
 
 Dog &Dog::operator=(const Dog &other)
 {
-	*this = other;
+	this->_type = other._type;
 	return (*this);
 }
 
@@ -92,13 +92,13 @@ Cat::~Cat()
 
 Cat::Cat(const Cat &other) : Animal()
 {
-	*this  = other;
+	this->_type = other._type;
 	std::cout << "Cat copy constructor called" << std::endl;
 }
 
 Cat &Cat::operator=(const Cat &other)
 {
-	*this = other;
+	this->_type = other._type;
 	return (*this);
 }
 
