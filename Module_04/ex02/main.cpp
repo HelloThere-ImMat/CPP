@@ -6,7 +6,7 @@
 /*   By: mat <mat@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 14:50:29 by mdorr             #+#    #+#             */
-/*   Updated: 2023/09/06 13:19:31 by mat              ###   ########.fr       */
+/*   Updated: 2023/09/06 13:26:40 by mat              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int main()
 	Dog d2;
 	Cat c1;
 	Cat c2;
+	//Animal A1; Uncomment to see that the animal class is indeed abstract
 
 	Animal *j = new Dog();
 	delete j;

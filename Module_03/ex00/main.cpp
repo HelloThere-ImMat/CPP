@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mdorr <mdorr@student.42.fr>                +#+  +:+       +#+        */
+/*   By: mat <mat@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 17:46:52 by mat               #+#    #+#             */
-/*   Updated: 2023/09/05 14:55:11 by mdorr            ###   ########.fr       */
+/*   Updated: 2023/09/06 13:06:04 by mat              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,11 @@ int	main(void)
 	ClapTrap	cpNb1("Babou");
 	ClapTrap	victim("Julien");
 	ClapTrap	assign("lva");
+	std::string targ = "dragon";
 
-	cpNb1.attack((std::string)"Target");
-	assign.attack((std::string)"Target");
+	cpNb1.attack(targ);
+	assign.attack(targ);
 	assign = cpNb1;
-	assign.attack((std::string)"Target");
+	assign.attack(targ);
 	return (0);
 }

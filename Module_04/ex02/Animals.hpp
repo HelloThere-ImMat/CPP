@@ -6,7 +6,7 @@
 /*   By: mat <mat@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 14:18:08 by mdorr             #+#    #+#             */
-/*   Updated: 2023/09/06 13:09:05 by mat              ###   ########.fr       */
+/*   Updated: 2023/09/06 13:25:02 by mat              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class Animal
 		virtual ~Animal();
 		Animal(const Animal &other);
 		Animal &operator=(const Animal &other);
-		virtual void makeSound() const;
+		virtual void makeSound() const = 0;
 		std::string getType() const;
 		Brain		*get_brain() const;
 	protected :
