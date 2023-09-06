@@ -6,7 +6,7 @@
 /*   By: mdorr <mdorr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 14:18:15 by mdorr             #+#    #+#             */
-/*   Updated: 2023/08/30 17:05:01 by mdorr            ###   ########.fr       */
+/*   Updated: 2023/09/05 14:52:15 by mdorr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,11 @@ void	Animal::makeSound() const
 std::string Animal::getType() const
 {
 	return (this->_type);
+}
+
+Brain	*Animal::getBrain(void) const
+{
+	return (this->_brain);
 }
 
 // Dog
@@ -100,15 +105,14 @@ Cat::~Cat()
 Cat::Cat(const Cat &other) : Animal()
 {
 	this->_type = other._type;
+	this->_brain = other.getBrain();
 	std::cout << "Cat copy constructor called" << std::endl;
-	this->_brain = new Brain(*other._brain);
 }
 
 Cat &Cat::operator=(const Cat &other)
 {
 	this->_type = other._type;
-	delete this->_brain;
-	this->_brain = new Brain(*other._brain);
+	this->_brain = other._brain;
 	return (*this);
 }
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mat <mat@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: mdorr <mdorr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/05 11:15:10 by mat               #+#    #+#             */
-/*   Updated: 2023/08/05 11:28:32 by mat              ###   ########.fr       */
+/*   Updated: 2023/09/05 14:57:53 by mdorr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	main(void)
 
 	std::cout << "str address     : " << &brain << std::endl;
 	std::cout << "stringPTR value : " << stringPTR << std::endl;
-	std::cout << "stringREF value : " << &stringREF << std::endl;
+	std::cout << "stringREF address : " << &stringREF << std::endl;
 	std::cout << std::endl;
 	std::cout << "string                  : " << brain << std::endl;
 	std::cout << "stringPTR pointed value : " << *stringPTR << std::endl;
