@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mdorr <mdorr@student.42.fr>                +#+  +:+       +#+        */
+/*   By: mat <mat@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 15:08:20 by mdorr             #+#    #+#             */
-/*   Updated: 2023/08/29 18:53:58 by mdorr            ###   ########.fr       */
+/*   Updated: 2023/09/06 13:48:03 by mat              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ float	Fixed::toFloat(void) const
 
 int		Fixed::toInt(void) const
 {
-	return (this->_fixedNb >> 8);
+	return (this->_fixedNb >> _bitNb);
 }
 
 

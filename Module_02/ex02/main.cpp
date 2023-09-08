@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mdorr <mdorr@student.42.fr>                +#+  +:+       +#+        */
+/*   By: mat <mat@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 11:33:45 by mdorr             #+#    #+#             */
-/*   Updated: 2023/08/30 15:50:15 by mdorr            ###   ########.fr       */
+/*   Updated: 2023/09/06 13:50:00 by mat              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int main( void ) {
 	std::cout << "b is " << b.toInt() << " as integer" << std::endl;
 	std::cout << "c is " << c.toInt() << " as integer" << std::endl;
 	std::cout << "d is " << d.toInt() << " as integer" << std::endl;
-	std::cout << "a is " << a.toFloat() << "as a float" << std::endl;
+	std::cout << "a is " << a.toFloat() << " as a float" << std::endl;
 
 	std::cout << "we must have a 0 : " << (a < b) << std::endl;
 	std::cout << "we must have a 1 : " << (a > b) << std::endl;
@@ -47,5 +47,8 @@ int main( void ) {
 	c++;
 	std::cout << "Post-incremented b is " << b << std::endl;
 	std::cout << "Post-incremented c is " << c << std::endl;
+
+	std::cout << "the max btw c and b is " << Fixed::max(c, b) << std::endl;
+	std::cout << "the min btw a and d is " << Fixed::min(a, d) << std::endl;
 	return 0;
 }
