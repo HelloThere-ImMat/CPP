@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mat <mat@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: mdorr <mdorr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 13:51:51 by mat               #+#    #+#             */
-/*   Updated: 2023/09/08 13:54:37 by mat              ###   ########.fr       */
+/*   Updated: 2023/09/11 10:00:02 by mdorr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,14 @@
 
 # include <iostream>
 # include <string>
-# include "Form.hpp"
+# include "AForm.hpp"
 
-class Form;
+class AForm;
 
 class Bureaucrat
 {
 	public:
-		
+
 		Bureaucrat();
 		Bureaucrat(const Bureaucrat &copy);
 		Bureaucrat(std::string _name, int _grade);
@@ -32,7 +32,7 @@ class Bureaucrat
 		int get_grade() const;
 		void	increment();
 		void	decrement();
-		void	signForm(Form &form);
+		void	signForm(AForm &form);
 		class GradeTooHighException: public std::exception {
 			public:
 				virtual const char* what() const throw();
@@ -40,7 +40,7 @@ class Bureaucrat
 		class GradeTooLowException: public std::exception {
 			public:
 				virtual const char* what() const throw();
-		};	
+		};
 	private:
 		std::string _name;
 		int _grade;

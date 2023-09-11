@@ -6,7 +6,7 @@
 /*   By: mdorr <mdorr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/10 14:33:18 by mdorr             #+#    #+#             */
-/*   Updated: 2023/08/29 13:34:09 by mdorr            ###   ########.fr       */
+/*   Updated: 2023/09/11 10:12:15 by mdorr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@
 
 typedef struct s_data
 {
-	char		*fileName;
-	char		*replaceFileName;
+	std::string	fileName;
+	std::string	replaceFileName;
 	std::string	s1;
 	std::string	s2;
 }				t_data;

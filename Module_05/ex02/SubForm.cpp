@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   SubForm.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mat <mat@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: mdorr <mdorr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 15:31:03 by mat               #+#    #+#             */
-/*   Updated: 2023/09/08 18:08:00 by mat              ###   ########.fr       */
+/*   Updated: 2023/09/11 10:01:52 by mdorr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 //ShruberryCreationForm
 
-ShruberryCreationForm::ShruberryCreationForm()
+ShruberryCreationForm::ShruberryCreationForm() : AForm("Shruberry", 145, 137)
 {
-
+	
 }
 
 ShruberryCreationForm::ShruberryCreationForm(const ShruberryCreationForm &other)

@@ -50,8 +50,8 @@ void	replace_in_line(std::string line, t_data data, std::ofstream &writeFlux)
 
 void	copy_everything(t_data data)
 {
-	std::ifstream	readFlux(data.fileName);
-	std::ofstream	writeFlux(data.replaceFileName, std::ios::out);
+	std::ifstream	readFlux(data.fileName.c_str());
+	std::ofstream	writeFlux(data.replaceFileName.c_str());
 	std::string		line;
 
 	while (readFlux.eof() == false)
@@ -64,7 +64,7 @@ void	copy_everything(t_data data)
 
 int main(int argc, char **argv)
 {
-	t_data data;
+	t_data			data;
 	std::string		line;
 
 	if (argc != 4)
@@ -72,6 +72,5 @@ int main(int argc, char **argv)
 	if (get_args(&data, argv) == EXIT_FAILURE)
 			return (EXIT_FAILURE);
 	copy_everything(data);
-	delete data.replaceFileName;
 	return (EXIT_SUCCESS);
 }
