@@ -6,7 +6,7 @@
 /*   By: mdorr <mdorr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 20:42:52 by mat               #+#    #+#             */
-/*   Updated: 2023/08/28 11:03:13 by mdorr            ###   ########.fr       */
+/*   Updated: 2023/09/11 16:20:04 by mdorr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int getPriorityIndex(std::string str)
 		"WARNING",
 		"ERROR"
 	};
-	for (int i; i < 4; i++)
+	for (int i = 0; i < 4; i++)
 	{
 		if (str.compare(mods[i]) == 0)
 			return (i);
