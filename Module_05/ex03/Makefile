@@ -2,10 +2,12 @@ SRCS += main.cpp
 SRCS += Bureaucrat.cpp
 SRCS += AForm.cpp
 SRCS += SubForm.cpp
+SRCS += Intern.cpp
 
 DEPS +=	Bureaucrat.hpp
 DEPS += AForm.hpp
 DEPS += SubForm.hpp
+DEPS += Intern.hpp
 
 CC			=	c++
 
