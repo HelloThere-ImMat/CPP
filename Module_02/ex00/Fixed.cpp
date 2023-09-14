@@ -6,7 +6,7 @@
 /*   By: mdorr <mdorr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 15:08:20 by mdorr             #+#    #+#             */
-/*   Updated: 2023/08/22 15:40:02 by mdorr            ###   ########.fr       */
+/*   Updated: 2023/09/14 16:24:01 by mdorr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ Fixed& Fixed::operator= (const Fixed &other)
 
 Fixed::~Fixed()
 {
-
+	std::cout << "Destructor called" << std::endl;
 }
 
 //Public Functs

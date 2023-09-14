@@ -6,7 +6,7 @@
 /*   By: mdorr <mdorr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 14:24:57 by mdorr             #+#    #+#             */
-/*   Updated: 2023/09/13 22:36:27 by mdorr            ###   ########.fr       */
+/*   Updated: 2023/09/14 15:51:19 by mdorr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ bool	isInt(std::string str)
 	const char *charTab = str.c_str();
 	int		i = 0;
 
+	if (charTab[i] == 45)
+		i++;
 	while (charTab[i])
 	{
 		if (isdigit((int)charTab[i]) == 0)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mat <mat@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: mdorr <mdorr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 15:08:20 by mdorr             #+#    #+#             */
-/*   Updated: 2023/09/06 13:48:03 by mat              ###   ########.fr       */
+/*   Updated: 2023/09/14 16:24:43 by mdorr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ Fixed::Fixed(const int integer)
 
 Fixed::Fixed(const float floating_pt)
 {
-	this->_fixedNb = floating_pt * pow(2, this->_bitNb);
+	this->_fixedNb = roundf(floating_pt * pow(2, this->_bitNb));
 }
 
 // Operators Overload
@@ -57,7 +57,7 @@ std::ostream& operator<<(std::ostream &os, const Fixed &other)
 
 Fixed::~Fixed()
 {
-	std::cout << "Fixed destructor called" << std::endl;
+	std::cout << "Destructor called" << std::endl;
 }
 
 //Public Functs

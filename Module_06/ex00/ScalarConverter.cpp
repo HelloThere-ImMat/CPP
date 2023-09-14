@@ -6,7 +6,7 @@
 /*   By: mdorr <mdorr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 13:26:48 by mdorr             #+#    #+#             */
-/*   Updated: 2023/09/13 22:49:26 by mdorr            ###   ########.fr       */
+/*   Updated: 2023/09/14 15:53:14 by mdorr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,9 +98,10 @@ void	convertInt(std::string str)
 	std::cout << "char: ";
 	if (value < 32 || value > 126)
 	{
-		std::cout << "Non displayable" << std::endl;
 		if (value < 0 || value > 127)
 			std::cout << "Impossible" << std::endl;
+		else
+			std::cout << "Non displayable" << std::endl;
 	}
 	else
 		std::cout << static_cast<char>(value) << std::endl;
