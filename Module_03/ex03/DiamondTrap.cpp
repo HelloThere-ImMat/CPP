@@ -6,7 +6,7 @@
 /*   By: mdorr <mdorr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 11:39:13 by mdorr             #+#    #+#             */
-/*   Updated: 2023/08/28 14:13:25 by mdorr            ###   ########.fr       */
+/*   Updated: 2023/09/18 12:22:00 by mdorr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name")
 	return ;
 }
 
-DiamondTrap::DiamondTrap(const DiamondTrap &other) : ClapTrap(other._name + "_clap_name"), ScavTrap(), FragTrap()
+DiamondTrap::DiamondTrap(const DiamondTrap &other) : ClapTrap(other), ScavTrap(), FragTrap()
 {
-	this->_name = other._name;
+	*this = other;
 	std::cout << "DiamondTrap copy constructor called" << std::endl;
 }
 
@@ -44,6 +44,9 @@ DiamondTrap &DiamondTrap::operator=(const DiamondTrap &other)
 {
 	this->_name = other._name;
 	this->ClapTrap::_name = other.ClapTrap::_name;
+	this->_energyPoint = other._energyPoint;
+	this->_attackDamage = other._attackDamage;
+	this->_hitPoint = other._hitPoint;
 	return (*this);
 }
 
