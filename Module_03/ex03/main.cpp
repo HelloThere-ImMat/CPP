@@ -6,7 +6,7 @@
 /*   By: mdorr <mdorr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 17:46:52 by mat               #+#    #+#             */
-/*   Updated: 2023/08/28 14:13:35 by mdorr            ###   ########.fr       */
+/*   Updated: 2023/09/18 11:54:34 by mdorr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,9 @@ int	main(void)
 	FragTrap	frag("Paul");
 	std::cout << std::endl;
 	DiamondTrap diams("Fojteparle");
+	std::cout << std::endl;
 	DiamondTrap cpyNb2(diams);
+	std::cout << std::endl;
 	DiamondTrap	assigned2("Assigned");
 	std::cout << std::endl;
 	std::string	target1 = "Dragon";

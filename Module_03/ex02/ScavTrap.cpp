@@ -6,7 +6,7 @@
 /*   By: mdorr <mdorr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/25 18:59:25 by mat               #+#    #+#             */
-/*   Updated: 2023/08/28 11:17:15 by mdorr            ###   ########.fr       */
+/*   Updated: 2023/09/18 11:23:18 by mdorr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 	return ;
 }
 
-ScavTrap::ScavTrap(const ScavTrap &other) : ClapTrap(other._name)
+ScavTrap::ScavTrap(const ScavTrap &other) : ClapTrap(other)
 {
 	std::cout << "ScavTrap copy constructor called" << std::endl;
 }

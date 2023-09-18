@@ -6,7 +6,7 @@
 /*   By: mdorr <mdorr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/25 18:59:25 by mat               #+#    #+#             */
-/*   Updated: 2023/08/28 11:21:10 by mdorr            ###   ########.fr       */
+/*   Updated: 2023/09/18 11:48:40 by mdorr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name)
 	return ;
 }
 
-FragTrap::FragTrap(const FragTrap &other) : ClapTrap(other._name)
+FragTrap::FragTrap(const FragTrap &other) : ClapTrap(other)
 {
 	std::cout << "FragTrap copy constructor called" << std::endl;
 }
@@ -33,7 +33,6 @@ FragTrap::FragTrap(const FragTrap &other) : ClapTrap(other._name)
 FragTrap::~FragTrap()
 {
 	std::cout << "FragTrap destructor called" << std::endl;
-	return ;
 }
 
 // Operator

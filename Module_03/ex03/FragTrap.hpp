@@ -6,7 +6,7 @@
 /*   By: mdorr <mdorr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 15:24:51 by mdorr             #+#    #+#             */
-/*   Updated: 2023/08/29 15:44:42 by mdorr            ###   ########.fr       */
+/*   Updated: 2023/09/18 11:50:25 by mdorr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,4 +27,4 @@ class FragTrap : virtual public ClapTrap
 		void	highFivesGuys(void);
 };
 
-#endifFIXED_HPPFIXED_HPP
+#endif
