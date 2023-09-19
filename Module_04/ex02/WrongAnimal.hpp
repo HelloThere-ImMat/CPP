@@ -6,14 +6,14 @@
 /*   By: mdorr <mdorr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/29 12:55:56 by mdorr             #+#    #+#             */
-/*   Updated: 2023/09/18 13:38:10 by mdorr            ###   ########.fr       */
+/*   Updated: 2023/09/19 12:28:57 by mdorr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef WRONGANIMAL_HPP
 # define WRONGANIMAL_HPP
 
-#include "Animals.hpp"
+#include "Animal.hpp"
 
 class WrongAnimal
 {
@@ -28,14 +28,5 @@ class WrongAnimal
 		std::string _type;
 };
 
-class WrongCat : public WrongAnimal
-{
-	public :
-		WrongCat();
-		WrongCat(const WrongCat &other);
-		~WrongCat();
-		WrongCat &operator=(const WrongCat &other);
-		void makeSound() const;
-};
 
 #endif

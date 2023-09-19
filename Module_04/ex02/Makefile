@@ -1,11 +1,15 @@
 SRCS += main.cpp
-SRCS += Animals.cpp
+SRCS += Animal.cpp
 SRCS += WrongAnimal.cpp
+SRCS += WrongCat.cpp
 SRCS += Dog.cpp
 SRCS += Cat.cpp
 SRCS += Brain.cpp
 
-DEPS +=	Animals.hpp
+DEPS += WrongCat.hpp
+DEPS += Cat.hpp
+DEPS += Dog.hpp
+DEPS +=	Animal.hpp
 DEPS += Brain.hpp
 DEPS += WrongAnimal.hpp
 

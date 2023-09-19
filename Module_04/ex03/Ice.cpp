@@ -1,32 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
+/*   Ice.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdorr <mdorr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/29 12:55:56 by mdorr             #+#    #+#             */
-/*   Updated: 2023/09/19 12:09:52 by mdorr            ###   ########.fr       */
+/*   Created: 2023/09/19 12:48:48 by mdorr             #+#    #+#             */
+/*   Updated: 2023/09/19 12:57:16 by mdorr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGANIMAL_HPP
-# define WRONGANIMAL_HPP
+#include "Ice.hpp"
 
-#include <string>
-#include <iostream>
-
-class WrongAnimal
+Ice::Ice() : AMateria("ice")
 {
-	public :
-		WrongAnimal();
-		virtual ~WrongAnimal();
-		WrongAnimal(const WrongAnimal &other);
-		WrongAnimal &operator=(const WrongAnimal &other);
-		virtual void makeSound() const;
-		std::string getType() const;
-	protected :
-		std::string _type;
-};
+	std::cout << "Ice default constructor called" << std::endl;
+}
 
-#endif
+Ice::~Ice()
+{
+	std::cout << "Ice destructor called" << std::endl;
+}
+
+AMateria *Ice::clone() const
+{
+	return (new Ice());
+}

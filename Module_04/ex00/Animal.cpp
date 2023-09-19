@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animals.cpp                                        :+:      :+:    :+:   */
+/*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdorr <mdorr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/28 14:18:15 by mdorr             #+#    #+#             */
-/*   Updated: 2023/09/18 13:37:15 by mdorr            ###   ########.fr       */
+/*   Created: 2023/09/19 11:49:31 by mdorr             #+#    #+#             */
+/*   Updated: 2023/09/19 12:11:10 by mdorr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animals.hpp"
+#include "Animal.hpp"
 
 Animal::Animal()
 {
@@ -25,7 +25,7 @@ Animal::~Animal()
 
 Animal::Animal(const Animal &other)
 {
-	*this = other;
+	this->_type = other._type;
 	std::cout << "Animal copy constructor called" << std::endl;
 }
 
@@ -43,9 +43,4 @@ void	Animal::makeSound() const
 const std::string &Animal::getType() const
 {
 	return (this->_type);
-}
-
-Brain	*Animal::get_brain() const
-{
-	return (this->_brain);
 }
