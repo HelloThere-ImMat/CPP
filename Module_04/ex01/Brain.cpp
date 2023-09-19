@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mat <mat@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: mdorr <mdorr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 12:48:54 by mat               #+#    #+#             */
-/*   Updated: 2023/09/06 13:21:31 by mat              ###   ########.fr       */
+/*   Updated: 2023/09/18 13:36:27 by mdorr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,12 +57,16 @@ Brain&	Brain::operator=(Brain const & rhs)
 */
 
 
-std::string Brain::getIdeas(int i) const
+const std::string &Brain::getIdeas(int i) const
 {
-	return (this->_ideas[i]);
+	if (i < 100)
+		return (this->_ideas[i]);
+	else
+		return (this->_ideas[99]);
 }
 
 void		Brain::setIdeas(std::string idea, int i)
 {
-	this->_ideas[i] = idea;
+	if (i < 100)
+		this->_ideas[i] = idea;
 }

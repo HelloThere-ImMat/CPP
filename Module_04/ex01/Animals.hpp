@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animals.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mat <mat@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: mdorr <mdorr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 14:18:08 by mdorr             #+#    #+#             */
-/*   Updated: 2023/09/06 13:09:05 by mat              ###   ########.fr       */
+/*   Updated: 2023/09/18 13:30:39 by mdorr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class Animal
 		Animal(const Animal &other);
 		Animal &operator=(const Animal &other);
 		virtual void makeSound() const;
-		std::string getType() const;
+		const std::string &getType() const;
 		Brain		*get_brain() const;
 	protected :
 		std::string _type;

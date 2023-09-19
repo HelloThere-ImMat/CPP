@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animals.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mat <mat@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: mdorr <mdorr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 14:18:15 by mdorr             #+#    #+#             */
-/*   Updated: 2023/09/06 13:09:34 by mat              ###   ########.fr       */
+/*   Updated: 2023/09/18 13:37:15 by mdorr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	Animal::makeSound() const
 	std::cout << "Miam" << std::endl;
 }
 
-std::string Animal::getType() const
+const std::string &Animal::getType() const
 {
 	return (this->_type);
 }

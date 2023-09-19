@@ -6,7 +6,7 @@
 /*   By: mdorr <mdorr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/29 12:56:07 by mdorr             #+#    #+#             */
-/*   Updated: 2023/08/29 13:03:59 by mdorr            ###   ########.fr       */
+/*   Updated: 2023/09/18 13:38:21 by mdorr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	WrongAnimal::makeSound() const
 	std::cout << "Miam" << std::endl;
 }
 
-std::string WrongAnimal::getType() const
+const std::string &WrongAnimal::getType() const
 {
 	return (this->_type);
 }
@@ -68,7 +68,7 @@ WrongCat::WrongCat(const WrongCat &other) : WrongAnimal()
 
 WrongCat &WrongCat::operator=(const WrongCat &other)
 {
-	*this = other;
+	this->_type = other._type;
 	return (*this);
 }
 

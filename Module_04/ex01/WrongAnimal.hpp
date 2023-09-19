@@ -6,7 +6,7 @@
 /*   By: mdorr <mdorr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/29 12:55:56 by mdorr             #+#    #+#             */
-/*   Updated: 2023/08/29 13:32:33 by mdorr            ###   ########.fr       */
+/*   Updated: 2023/09/18 13:33:34 by mdorr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class WrongAnimal
 		WrongAnimal(const WrongAnimal &other);
 		WrongAnimal &operator=(const WrongAnimal &other);
 		virtual void makeSound() const;
-		std::string getType() const;
+		const std::string &getType() const;
 	protected :
 		std::string _type;
 };
