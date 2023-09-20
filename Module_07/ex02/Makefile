@@ -1,6 +1,7 @@
 SRCS += main.cpp
 
-DEPS +=	whatever.hpp
+DEPS +=	Array.hpp
+DEPS += Array.tpp
 
 CC			=	c++
 
@@ -9,7 +10,7 @@ FLAGS		+=	-Wextra
 FLAGS		+=	-Werror
 FLAGS		+=	-std=c++98
 
-NAME		=	Template1
+NAME		=	Template2
 
 PATH_OBJS	+= objs
 OBJS		+= $(patsubst %.cpp, $(PATH_OBJS)/%.o, $(SRCS))
