@@ -6,7 +6,7 @@
 /*   By: mdorr <mdorr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 12:03:13 by mdorr             #+#    #+#             */
-/*   Updated: 2023/09/21 12:12:34 by mdorr            ###   ########.fr       */
+/*   Updated: 2023/09/21 14:02:09 by mdorr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,19 @@
 
 Character::Character(const std::string &name) : _name(name)
 {
-	for (size_t i(0); i < INVENTORY_SIZE; ++i)
+	for (int i = 0; i < INVENTORY_SIZE; ++i)
 		_inventory[i] = NULL;
+	for (int j = 0 ; j < FLOOR_SIZE; j++)
+		_dropped_items[j] = NULL;
 	std::cout << "Characted specified constructor called" << std::endl;
 }
 
 Character::Character(const Character &other)
 {
-	for (size_t i(0); i < INVENTORY_SIZE; ++i)
+	for (int i = 0 ; i < INVENTORY_SIZE; ++i)
 		_inventory[i] = NULL;
+	for (int j = 0 ; j < FLOOR_SIZE; j++)
+		_dropped_items[j] = NULL;
 	std::cout << "Characted copy constructor called" << std::endl;
 	*this = other;
 }
@@ -38,6 +42,15 @@ Character &Character::operator=(const Character &assign)
 			_inventory[i] = assign._inventory[i]->clone();
 		else
 			_inventory[i] = NULL;
+	}
+	for (int j = 0 ; j < FLOOR_SIZE; ++j)
+	{
+		if (_dropped_items[j])
+			delete _dropped_items[j];
+		if (assign._dropped_items[j])
+			_dropped_items[j] = assign._dropped_items[j]->clone();
+		else
+			_dropped_items[j] = NULL;
 	}
 	return (*this);
 }
@@ -63,7 +76,14 @@ void Character::unequip(int idx)
 {
 	if (idx >= 0 && idx < INVENTORY_SIZE)
 	{
-		_dropped_items.push_back(_inventory[idx]);
+		for (int i = 0 ; i < FLOOR_SIZE ; i++)
+		{
+			if (_dropped_items[i] == NULL)
+			{
+				_dropped_items[i] = _inventory[idx];
+				break ;
+			}
+		}
 		_inventory[idx] = NULL;
 	}
 }
@@ -84,9 +104,10 @@ Character::~Character()
 		if (_inventory[i])
 			delete _inventory[i];
 	}
-	std::vector<AMateria*>::iterator itt;
-	for (itt = _dropped_items.begin() ; itt != _dropped_items.end() ; itt++)
-		delete *itt;
-	_dropped_items.clear();
+	for (int j = 0 ; j < FLOOR_SIZE ; j++)
+	{
+		if (_dropped_items[j])
+			delete _dropped_items[j];
+	}
 	std::cout << "Character destructor called" << std::endl;
 }

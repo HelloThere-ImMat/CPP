@@ -6,7 +6,7 @@
 /*   By: mdorr <mdorr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 12:21:25 by mat               #+#    #+#             */
-/*   Updated: 2023/09/19 12:20:03 by mdorr            ###   ########.fr       */
+/*   Updated: 2023/09/21 13:46:59 by mdorr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,4 +43,9 @@ Cat &Cat::operator=(const Cat &other)
 void	Cat::makeSound() const
 {
 	std::cout << "Miaou" << std::endl;
+}
+
+Brain	*Cat::get_brain() const
+{
+	return (this->_brain);
 }

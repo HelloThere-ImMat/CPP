@@ -6,7 +6,7 @@
 /*   By: mdorr <mdorr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 12:21:05 by mat               #+#    #+#             */
-/*   Updated: 2023/09/19 12:24:40 by mdorr            ###   ########.fr       */
+/*   Updated: 2023/09/21 13:51:46 by mdorr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,4 +43,9 @@ Dog &Dog::operator=(const Dog &other)
 void	Dog::makeSound() const
 {
 	std::cout << "Wouaf" << std::endl;
+}
+
+Brain	*Dog::get_brain() const
+{
+	return (this->_brain);
 }

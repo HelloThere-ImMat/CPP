@@ -6,7 +6,7 @@
 /*   By: mdorr <mdorr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 12:23:35 by mdorr             #+#    #+#             */
-/*   Updated: 2023/09/19 12:24:06 by mdorr            ###   ########.fr       */
+/*   Updated: 2023/09/21 13:50:53 by mdorr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ class Dog : public Animal
 		Dog(const Dog &other);
 		Dog &operator=(const Dog &other);
 		void makeSound() const;
+		Brain		*get_brain() const;
 };
 
 #endif

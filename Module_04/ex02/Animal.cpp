@@ -6,7 +6,7 @@
 /*   By: mdorr <mdorr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 12:22:31 by mdorr             #+#    #+#             */
-/*   Updated: 2023/09/19 12:59:25 by mdorr            ###   ########.fr       */
+/*   Updated: 2023/09/21 13:51:05 by mdorr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,4 @@ Animal &Animal::operator=(const Animal &other)
 const std::string &Animal::getType() const
 {
 	return (this->_type);
-}
-
-Brain	*Animal::get_brain() const
-{
-	return (this->_brain);
 }

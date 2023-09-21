@@ -6,7 +6,7 @@
 /*   By: mdorr <mdorr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 12:14:56 by mdorr             #+#    #+#             */
-/*   Updated: 2023/09/19 12:15:19 by mdorr            ###   ########.fr       */
+/*   Updated: 2023/09/21 13:42:22 by mdorr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,5 @@ WrongCat &WrongCat::operator=(const WrongCat &other)
 
 void	WrongCat::makeSound() const
 {
-	std::cout << "Wouaf" << std::endl;
+	std::cout << "Meow" << std::endl;
 }

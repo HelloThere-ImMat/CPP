@@ -30,7 +30,7 @@ all		: $(NAME)
 $(NAME)	: $(OBJS)
 	$(CC) $(FLAGS) $^ -o $@
 
-$(OBJS)	: $(PATH_OBJS)/%.o : %.cpp Makefile
+$(OBJS)	: $(PATH_OBJS)/%.o : %.cpp Makefile $(DEPS)
 	mkdir -p $(PATH_OBJS)
 	$(CC) $(FLAGS) -c $< -o $@ -I .
 

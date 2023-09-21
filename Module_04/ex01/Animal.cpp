@@ -6,7 +6,7 @@
 /*   By: mdorr <mdorr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 14:18:15 by mdorr             #+#    #+#             */
-/*   Updated: 2023/09/19 11:57:15 by mdorr            ###   ########.fr       */
+/*   Updated: 2023/09/21 13:44:26 by mdorr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,9 +43,4 @@ void	Animal::makeSound() const
 const std::string &Animal::getType() const
 {
 	return (this->_type);
-}
-
-Brain	*Animal::get_brain() const
-{
-	return (this->_brain);
 }
