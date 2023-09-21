@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Character.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mdorr <mdorr@student.42.fr>                +#+  +:+       +#+        */
+/*   By: mat <mat@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 12:03:13 by mdorr             #+#    #+#             */
-/*   Updated: 2023/09/20 14:39:57 by mdorr            ###   ########.fr       */
+/*   Updated: 2023/09/20 15:23:58 by mat              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,13 @@ Character::Character(const std::string &name) : _name(name)
 {
 	for (size_t i(0); i < INVENTORY_SIZE; ++i)
 		_inventory[i] = NULL;
+	std::cout << "Characted specified constructor called" << std::endl;
 }
 
 Character::Character(const Character &other)
 {
 	*this = other;
+	std::cout << "Characted copy constructor called" << std::endl;
 }
 
 Character &Character::operator=(const Character &assign)
@@ -48,7 +50,7 @@ void Character::equip(AMateria *m)
 	{
 		if (_inventory[i] == NULL)
 		{
-			_inventory[i] = m->clone();
+			_inventory[i] = m;
 			break ;
 		}
 	}
@@ -66,7 +68,10 @@ void Character::unequip(int idx)
 void Character::use(int idx, ICharacter &target)
 {
 	if (idx >= 0 && idx < INVENTORY_SIZE)
-		_inventory[idx]->use(target);
+	{
+		if (_inventory[idx])
+			_inventory[idx]->use(target);
+	}
 }
 
 Character::~Character()
@@ -80,4 +85,5 @@ Character::~Character()
 	for (itt = _dropped_items.begin() ; itt != _dropped_items.end() ; itt++)
 		delete *itt;
 	_dropped_items.clear();
+	std::cout << "Character destructor called" << std::endl;
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mdorr <mdorr@student.42.fr>                +#+  +:+       +#+        */
+/*   By: mat <mat@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 11:56:03 by mdorr             #+#    #+#             */
-/*   Updated: 2023/09/20 13:28:34 by mdorr            ###   ########.fr       */
+/*   Updated: 2023/09/20 14:50:42 by mat              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class Character : public ICharacter
 	private :
 		std::string _name;
 		AMateria *_inventory[INVENTORY_SIZE];
-		static std::vector<AMateria*> _dropped_items;
+		std::vector<AMateria*> _dropped_items;
 	public:
 			Character(const std::string &name);
 			Character(const Character &other);

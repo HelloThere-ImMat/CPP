@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   MateriaSource.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mdorr <mdorr@student.42.fr>                +#+  +:+       +#+        */
+/*   By: mat <mat@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 13:55:21 by mdorr             #+#    #+#             */
-/*   Updated: 2023/09/20 14:13:57 by mdorr            ###   ########.fr       */
+/*   Updated: 2023/09/20 15:14:47 by mat              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,10 @@ void MateriaSource::learnMateria(AMateria *m)
 	for (int i = 0 ; i < SRCS_NBR ; i++)
 	{
 		if (_srcs[i] == NULL)
-			_srcs[i] = m->clone();
+		{
+			_srcs[i] = m;
+			break ;
+		}
 	}
 }
 
@@ -50,7 +53,7 @@ AMateria *MateriaSource::createMateria(std::string const & type)
 	{
 		if (_srcs[i])
 		{
-			if (_srcs[i]->getType().compare(type) == 0)
+			if (_srcs[i]->getType() == type)
 				return (_srcs[i]->clone());
 		}
 	}
@@ -64,4 +67,5 @@ MateriaSource::~MateriaSource()
 		if (_srcs[i])
 			delete _srcs[i];
 	}
+	std::cout << "MateriaSource destructor called" << std::endl;
 }
