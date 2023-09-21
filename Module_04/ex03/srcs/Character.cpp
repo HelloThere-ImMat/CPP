@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Character.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mat <mat@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: mdorr <mdorr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 12:03:13 by mdorr             #+#    #+#             */
-/*   Updated: 2023/09/20 15:23:58 by mat              ###   ########.fr       */
+/*   Updated: 2023/09/21 12:12:34 by mdorr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,16 +21,19 @@ Character::Character(const std::string &name) : _name(name)
 
 Character::Character(const Character &other)
 {
-	*this = other;
+	for (size_t i(0); i < INVENTORY_SIZE; ++i)
+		_inventory[i] = NULL;
 	std::cout << "Characted copy constructor called" << std::endl;
+	*this = other;
 }
 
 Character &Character::operator=(const Character &assign)
 {
 	_name = assign._name;
-	for (size_t i(0); i < INVENTORY_SIZE; ++i)
+	for (int i = 0 ; i < INVENTORY_SIZE; ++i)
 	{
-		delete _inventory[i];
+		if (_inventory[i])
+			delete _inventory[i];
 		if (assign._inventory[i])
 			_inventory[i] = assign._inventory[i]->clone();
 		else
