@@ -47,11 +47,12 @@ std::ostream &operator<<(std::ostream &os, const Bureaucrat &bureaucrat)
 }
 
 //Member functs
-std::string Bureaucrat::get_name() const
+const std::string &Bureaucrat::get_name() const
 {
 	return _name;
 }
-int Bureaucrat::get_grade() const
+
+const int &Bureaucrat::get_grade() const
 {
 	return _grade;
 }
@@ -82,7 +83,7 @@ void	Bureaucrat::signForm(Form &form)
 		std::cerr << this->_name << " could not sign form because : ";
 		std::cerr << e.what() << std::endl;
 	}
-	
+
 }
 
 //Exceptions

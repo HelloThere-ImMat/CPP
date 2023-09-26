@@ -6,11 +6,13 @@
 /*   By: mdorr <mdorr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 18:25:38 by mat               #+#    #+#             */
-/*   Updated: 2023/09/11 13:25:51 by mdorr            ###   ########.fr       */
+/*   Updated: 2023/09/26 11:54:45 by mdorr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "SubForm.hpp"
+#include "ShruberryCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 int main()
 {

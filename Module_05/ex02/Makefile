@@ -1,11 +1,15 @@
 SRCS += main.cpp
 SRCS += Bureaucrat.cpp
 SRCS += AForm.cpp
-SRCS += SubForm.cpp
+SRCS += ShruberryCreationForm.cpp
+SRCS += RobotomyRequestForm.cpp
+SRCS += PresidentialPardonForm.cpp
 
 DEPS +=	Bureaucrat.hpp
 DEPS += AForm.hpp
-DEPS += SubForm.hpp
+DEPS += ShruberryCreationForm.hpp
+DEPS += RobotomyRequestForm.hpp
+DEPS += PresidentialPardonForm.hpp
 
 CC			=	c++
 

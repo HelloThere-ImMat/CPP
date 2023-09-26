@@ -94,21 +94,22 @@ void		AForm::execute(Bureaucrat const &executor) const
 		this->action();
 }
 
-std::string	AForm::getName() const
+const std::string	&AForm::getName() const
 {
 	return (_name);
 }
 
-bool		AForm::getSignedBool() const
+const bool			&AForm::getSignedBool() const
 {
 	return (_isSigned);
 }
 
-int			AForm::getSignGrade() const
+const int			&AForm::getSignGrade() const
 {
 	return (_signGrade);
 }
-int			AForm::getExecGrade() const
+
+const int			&AForm::getExecGrade() const
 {
 	return (_execGrade);
 }

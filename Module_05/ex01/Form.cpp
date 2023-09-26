@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mat <mat@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: mdorr <mdorr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 10:52:13 by mat               #+#    #+#             */
-/*   Updated: 2023/09/08 14:07:25 by mat              ###   ########.fr       */
+/*   Updated: 2023/09/26 11:40:52 by mdorr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ Form::Form(std::string name, int signGrade, int execGrade) : _name(name)
 			throw GradeTooLowException();
 		else
 			throw GradeTooHighException();
-			
+
 	}
 	_signGrade = signGrade;
 	_execGrade = execGrade;
@@ -84,21 +84,22 @@ void		Form::beSigned(const Bureaucrat &bureaucrat)
 	this->_isSigned = true;
 }
 
-std::string	Form::getName() const
+const std::string	&Form::getName() const
 {
 	return (_name);
 }
 
-bool		Form::getSignedBool() const
+const bool		&Form::getSignedBool() const
 {
 	return (_isSigned);
 }
 
-int			Form::getSignGrade() const
+const int			&Form::getSignGrade() const
 {
 	return (_signGrade);
 }
-int			Form::getExecGrade() const
+
+const int			&Form::getExecGrade() const
 {
 	return (_execGrade);
 }

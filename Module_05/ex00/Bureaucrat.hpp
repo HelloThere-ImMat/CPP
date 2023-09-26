@@ -7,14 +7,14 @@
 class Bureaucrat
 {
 	public:
-		
+
 		Bureaucrat();
 		Bureaucrat(const Bureaucrat &copy);
 		Bureaucrat(std::string _name, int _grade);
 		~Bureaucrat();
 		Bureaucrat & operator=(const Bureaucrat &assign);
-		std::string get_name() const;
-		int get_grade() const;
+		const std::string &get_name() const;
+		const int &get_grade() const;
 		void	increment();
 		void	decrement();
 		class GradeTooHighException: public std::exception {
@@ -24,7 +24,7 @@ class Bureaucrat
 		class GradeTooLowException: public std::exception {
 			public:
 				virtual const char* what() const throw();
-		};	
+		};
 	private:
 		std::string _name;
 		int _grade;

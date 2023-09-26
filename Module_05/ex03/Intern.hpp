@@ -6,11 +6,13 @@
 /*   By: mdorr <mdorr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 13:31:43 by mdorr             #+#    #+#             */
-/*   Updated: 2023/09/12 12:24:09 by mdorr            ###   ########.fr       */
+/*   Updated: 2023/09/26 11:56:44 by mdorr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "SubForm.hpp"
+#include "ShruberryCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 typedef struct s_FormType
 {

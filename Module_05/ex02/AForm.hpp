@@ -14,6 +14,8 @@
 # define FORM_HPP
 
 #include "Bureaucrat.hpp"
+#include <fstream>
+#include <cstdlib>
 
 class Bureaucrat;
 
@@ -37,10 +39,10 @@ class AForm
 		void		beSigned(Bureaucrat const &bureaucrat);
 		void		execute(Bureaucrat const &executor) const;
 		virtual void	action() const = 0;
-		std::string	getName() const;
-		bool		getSignedBool() const;
-		int			getSignGrade() const;
-		int			getExecGrade() const;
+		const std::string	&getName() const;
+		const bool			&getSignedBool() const;
+		const int			&getSignGrade() const;
+		const int			&getExecGrade() const;
 	//Exeptions
 		class GradeTooHighException: public std::exception {
 			public:

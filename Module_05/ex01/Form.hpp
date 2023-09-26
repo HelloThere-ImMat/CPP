@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mat <mat@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: mdorr <mdorr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 10:42:59 by mat               #+#    #+#             */
-/*   Updated: 2023/09/08 13:54:25 by mat              ###   ########.fr       */
+/*   Updated: 2023/09/26 11:40:16 by mdorr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,11 @@ class Form
 	//Overloaded operator
 		Form &operator=(const Form &assign);
 	//Member functs
-		void		beSigned(const Bureaucrat &bureaucrat);
-		std::string	getName() const;
-		bool		getSignedBool() const;
-		int			getSignGrade() const;
-		int			getExecGrade() const;
+		void				beSigned(const Bureaucrat &bureaucrat);
+		const std::string	&getName() const;
+		const bool			&getSignedBool() const;
+		const int			&getSignGrade() const;
+		const int			&getExecGrade() const;
 	//Exeptions
 		class GradeTooHighException: public std::exception {
 			public:

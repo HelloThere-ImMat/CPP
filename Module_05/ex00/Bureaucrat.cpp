@@ -47,11 +47,11 @@ std::ostream &operator<<(std::ostream &os, const Bureaucrat &bureaucrat)
 }
 
 //Member functs
-std::string Bureaucrat::get_name() const
+const std::string &Bureaucrat::get_name() const
 {
 	return _name;
 }
-int Bureaucrat::get_grade() const
+const int &Bureaucrat::get_grade() const
 {
 	return _grade;
 }
