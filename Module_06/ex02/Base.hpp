@@ -6,18 +6,17 @@
 /*   By: mdorr <mdorr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 16:52:44 by mdorr             #+#    #+#             */
-/*   Updated: 2023/09/14 16:56:21 by mdorr            ###   ########.fr       */
+/*   Updated: 2023/09/27 16:31:17 by mdorr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
 #include <iostream>
 #include <string>
+#include <cstdlib>
 
 class Base
 {
 	public:
 		virtual ~Base();
-		Base 	*generate(void);
-		void	identify(Base *p);
-		void	identify(Base &p);
 };

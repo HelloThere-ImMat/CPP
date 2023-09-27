@@ -1,22 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Base.cpp                                           :+:      :+:    :+:   */
+/*   A.hpp                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdorr <mdorr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/14 16:54:31 by mdorr             #+#    #+#             */
-/*   Updated: 2023/09/27 16:31:27 by mdorr            ###   ########.fr       */
+/*   Created: 2023/09/27 15:21:56 by mdorr             #+#    #+#             */
+/*   Updated: 2023/09/27 15:43:43 by mdorr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "A.hpp"
-#include "B.hpp"
-#include "C.hpp"
+#pragma once
+#include "Base.hpp"
 
-Base::~Base()
+class A : public Base
 {
-	std::cout << "Base destructor called" << std::endl;
-}
-
-
+	public :
+		~A() {}
+};

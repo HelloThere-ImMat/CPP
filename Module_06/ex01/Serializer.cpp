@@ -6,7 +6,7 @@
 /*   By: mdorr <mdorr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 16:58:52 by mdorr             #+#    #+#             */
-/*   Updated: 2023/09/14 17:12:56 by mdorr            ###   ########.fr       */
+/*   Updated: 2023/09/27 14:50:10 by mdorr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,16 @@ Serializer &Serializer::operator=(const Serializer &assign)
 
 uintptr_t Serializer::serialize(Data *ptr)
 {
+	uintptr_t	intPTR;
 
+	intPTR = reinterpret_cast<uintptr_t>(ptr);
+	return (intPTR);
 }
 
 Data *Serializer::deserialize(uintptr_t raw)
 {
+	Data	*dataPTR;
 
+	dataPTR = reinterpret_cast<Data *>(raw);
+	return (dataPTR);
 }
