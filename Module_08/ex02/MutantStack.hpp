@@ -1,31 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   easyfind.hpp                                       :+:      :+:    :+:   */
+/*   MutantStack.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdorr <mdorr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/26 15:41:31 by mdorr             #+#    #+#             */
-/*   Updated: 2023/10/05 13:51:50 by mdorr            ###   ########.fr       */
+/*   Created: 2023/10/06 11:06:07 by mdorr             #+#    #+#             */
+/*   Updated: 2023/10/06 11:54:11 by mdorr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string>
 #include <iostream>
 
 template <typename T>
-int easyfind (T cont, int compare)
+class MutantStack
 {
-	int i = 0;
-	int lenght = cont.size();
-
-	while (i < lenght)
-	{
-		if (cont[i] == compare)
-			break ;
-		i++;
-	}
-	if (i == lenght)
-		return (EXIT_FAILURE);
-	return (EXIT_SUCCESS);
+	private :
+		T			_tab[8];
+		int 		_elementNbr;
+		int			_size;
+	public :
+		MutantStack();
+		MutantStack(const MutantStack &other);
+		MutantStack &operator=(const MutantStack &assign);
+		//mem functs
+		bool		empty() const;
+		int			size() const;
+		const T&	top() const;
+		void		push (const value_type& val);
+		template <class... Args> void emplace (Args&&... args);
+		void		pop();
+		void		swap (stack& x);
+		~MutantStack();
 }

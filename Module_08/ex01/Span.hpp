@@ -1,31 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   easyfind.hpp                                       :+:      :+:    :+:   */
+/*   Span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdorr <mdorr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/26 15:41:31 by mdorr             #+#    #+#             */
-/*   Updated: 2023/10/05 13:51:50 by mdorr            ###   ########.fr       */
+/*   Created: 2023/10/05 14:19:14 by mdorr             #+#    #+#             */
+/*   Updated: 2023/10/06 11:33:45 by mdorr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string>
 #include <iostream>
+#include <vector>
 
-template <typename T>
-int easyfind (T cont, int compare)
+class Span
 {
-	int i = 0;
-	int lenght = cont.size();
-
-	while (i < lenght)
-	{
-		if (cont[i] == compare)
-			break ;
-		i++;
-	}
-	if (i == lenght)
-		return (EXIT_FAILURE);
-	return (EXIT_SUCCESS);
-}
+	public :
+		std::vector<int>	_v;
+		int					_size;
+		int					_elementsNbr;
+		Span(unsigned int N);
+		Span(const Span &other);
+		Span &operator=(const Span &assign);
+		void	addNumber(int value);
+		void	addRandomElements(int randValNbr);
+		unsigned int	shortestSpan();
+		unsigned int	longestSpan();
+		~Span();
+};
