@@ -1,6 +1,7 @@
 SRCS += main.cpp
 SRCS += BitcoinExchange.cpp
 SRCS += utils.cpp
+SRCS += printError.cpp
 
 DEPS +=	BitcoinExchange.hpp
 

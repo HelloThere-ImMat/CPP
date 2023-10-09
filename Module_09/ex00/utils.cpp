@@ -3,65 +3,83 @@
 /*                                                        :::      ::::::::   */
 /*   utils.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mdorr <mdorr@student.42.fr>                +#+  +:+       +#+        */
+/*   By: mat <mat@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 11:36:07 by mdorr             #+#    #+#             */
-/*   Updated: 2023/10/09 13:15:04 by mdorr            ###   ########.fr       */
+/*   Updated: 2023/10/09 23:42:56 by mat              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "BitcoinExchange.hpp"
 
-int	testDate(std::string date)
+bool isLeap(int year) 
 {
-	(void)date;
+	return (((year % 4 == 0) && (year % 100 != 0)))
+	|| (year % 400 == 0);
+}
+
+bool isValidDate(s_date date)
+{
+	//BTC and current years
+	if (date.year > 2023 ||
+		date.year < 1970)
+		return false;
+	//Months and days maximums
+	if (date.month < 1 || date.month > 12)
+		return false;
+	if (date.day < 1 || date.day > 31)
+		return false;
+	// February month
+	if (date.month == 2)
+	{ 
+		if (isLeap(date.year))
+			return (date.day <= 29);
+		else
+			return (date.day <= 28);
+	}
+	//30 days months
+	if (date.month == 4 || date.month == 6 ||
+		date.month == 9 || date.month == 11)
+		return (date.day <= 30);
+	return true;
+}
+
+bool	dateAfterBtc(s_date &date)
+{
+	if (date.year < 2009 && date.month < 10 && date.day < 12)
+		return (false);
+	return (true);
+}
+
+int	testDate(std::string line, std::string *date)
+{
+	s_date	sD;
+
+	sD.year = atoi(line.substr(0, 4).c_str());
+	sD.month = atoi(line.substr(5, 2).c_str());
+	sD.day = atoi(line.substr(8, 2).c_str());
+	if (isValidDate(sD) == false)
+		return (printError(e_date, line.substr(0, 10), 0));
+	if (dateAfterBtc(sD) == false)
+		return (printError(e_beforeBtc, line.substr(0, 10), 0));
+	*date = line.substr(0, 10);
 	return (EXIT_SUCCESS);
 }
 
-std::pair<std::string, double>	*exitGetPair(std::pair<std::string, double> *pair, e_pe error, std::string str, double value)
+int	testValue(std::string line, double *value)
 {
-	switch (error)
-	{
-	case e_empty :
-		break;
-	case e_input :
-		std::cout << "Error : bad input => " << str << std::endl;
-		break;
-	case e_date :
-		std::cout << "Error : following date format is incorrect : " << str << std::endl;
-		break;
-	case e_value :
-		if (value < 0)
-			std::cout << "Error : not a positive number" << std::endl;
-		else if (value > 2147483647)
-			std::cout << "Error : too large a number" << std::endl;
-		else if (str != "0" && pair->second == 0)
-			std::cout << "Error : value is not in float format" << std::endl;
-	}
-	delete pair;
-	return (NULL);
-}
+	std::string	valueStr;
 
-std::pair<std::string, double> *getPair(std::string line)
-{
-	std::pair<std::string, double> 	*pair = new std::pair<std::string, double>;
-	std::string						valueStr;
-
-	if (line.empty() == true)
-		return (exitGetPair(pair, e_empty, NULL, 0));
-	pair->first = line.substr(0, 10);
-	if (testDate(pair->first) == EXIT_FAILURE)
-		return (exitGetPair(pair, e_date, pair->first, 0));
 	try
 	{
-		valueStr = line.substr(11 , std::string::npos);
+		valueStr = line.substr(13, std::string::npos).c_str();
 	}
-	catch(const std::exception& e)
+	catch (const std::exception &e)
 	{
-		return (exitGetPair(pair, e_input, line, 0));
+		return (printError(e_input, line, 0));
 	}
-	pair->second = atof(valueStr.c_str());
-	if ((valueStr != "0" && pair->second == 0) || pair->second < 0 || pair->second > 2147483647)
-		return (exitGetPair(pair, e_value, valueStr, pair->second));
-	return (pair);
+	*value = atof(valueStr.c_str());
+	if ((valueStr != "0" && *value == 0) || *value < 0 || *value > 2147483647)
+		return (printError(e_value, valueStr, *value));
+	return (EXIT_SUCCESS);
 }
