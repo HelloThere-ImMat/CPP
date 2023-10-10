@@ -6,7 +6,7 @@
 /*   By: mdorr <mdorr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 14:41:24 by mdorr             #+#    #+#             */
-/*   Updated: 2023/10/10 13:56:32 by mdorr            ###   ########.fr       */
+/*   Updated: 2023/10/10 14:17:19 by mdorr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,11 @@
 
 BitcoinExchange::BitcoinExchange()
 {
-	std::cout << "BitcoinExchange default constructor called" << std::endl;
 }
 
 BitcoinExchange::BitcoinExchange(const BitcoinExchange &other)
 {
 	*this = other;
-	std::cout << "BitcoinExchange copy constructor called" << std::endl;
 }
 
 BitcoinExchange &BitcoinExchange::operator=(const BitcoinExchange &assign)
@@ -129,5 +127,4 @@ std::map<std::string, double>	&BitcoinExchange::getBtcIndex(void)
 
 BitcoinExchange::~BitcoinExchange()
 {
-	std::cout << "BitcoinExchange default destructor called" << std::endl;
 }

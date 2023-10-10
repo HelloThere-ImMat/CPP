@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   printError.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mat <mat@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: mdorr <mdorr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 15:47:40 by mat               #+#    #+#             */
-/*   Updated: 2023/10/09 23:39:46 by mat              ###   ########.fr       */
+/*   Updated: 2023/10/10 14:16:31 by mdorr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,6 @@ int	printError(e_pe error, std::string str, double value)
 			break;
 		case e_input :
 			std::cout << "Error : bad input => " << str << std::endl;
-			break;
-		case e_date :
-			std::cout << "Error : following date format is incorrect : " << str << std::endl;
 			break;
 		case e_beforeBtc :
 			std::cout << "Error : no record of bitcoin at the following time : " << str << std::endl;

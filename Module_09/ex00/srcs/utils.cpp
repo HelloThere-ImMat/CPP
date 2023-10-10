@@ -6,7 +6,7 @@
 /*   By: mdorr <mdorr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 11:36:07 by mdorr             #+#    #+#             */
-/*   Updated: 2023/10/10 13:59:05 by mdorr            ###   ########.fr       */
+/*   Updated: 2023/10/10 14:16:03 by mdorr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ int testDate(std::string line, std::string *date)
 	s_date sD = getDateStruct(line);
 
 	if (isValidDate(sD) == false)
-		return (printError(e_date, line.substr(0, 10), 0));
+		return (printError(e_input, line.substr(0, 10), 0));
 	if (dateAfterBtc(sD) == false)
 		return (printError(e_beforeBtc, line.substr(0, 10), 0));
 	*date = line.substr(0, 10);
@@ -85,8 +85,6 @@ int testValue(std::string line, double *value)
 		return (printError(e_input, line, 0));
 	}
 	*value = atof(valueStr.c_str());
-	std::cout << "valueSTR is : " << valueStr << std::endl;
-	std::cout << "value is : " << *value << std::endl;
 	if ((valueStr != "0" && *value == 0) || *value < 0 || *value > 2147483647)
 		return (printError(e_value, valueStr, *value));
 	return (EXIT_SUCCESS);
@@ -95,6 +93,14 @@ int testValue(std::string line, double *value)
 std::string findClosestKey(std::map<std::string, double> &map, std::string date)
 {
 	std::map<std::string, double>::iterator it;
+	std::string					closestDate;
 
-	for (it = map.begin(); it != map.end(); )
+	for (it = map.begin(); it != map.end(); it++)
+	{
+		if (it->first < date)
+			closestDate = it->first;
+		else
+			break;
+	}
+	return (closestDate);
 }
