@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   BitcoinExchange.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mat <mat@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: mdorr <mdorr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 14:36:22 by mdorr             #+#    #+#             */
-/*   Updated: 2023/10/09 23:47:58 by mat              ###   ########.fr       */
+/*   Updated: 2023/10/10 13:48:17 by mdorr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <string>
 #include <map>
 #include <utility>
+#include <cstdlib>
 #include <stdlib.h>
 
 #define DATABASE_PATH	"data.csv"
@@ -58,4 +59,4 @@ void	printmap(BitcoinExchange &bla);
 int		printError(e_pe error, std::string str, double value);
 int		testDate(std::string line, std::string *date);
 int		testValue(std::string line, double *value);
-
+std::string decreaseDate(std::string date);

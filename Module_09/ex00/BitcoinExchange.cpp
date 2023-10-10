@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   BitcoinExchange.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mat <mat@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: mdorr <mdorr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 14:41:24 by mdorr             #+#    #+#             */
-/*   Updated: 2023/10/10 00:02:09 by mat              ###   ########.fr       */
+/*   Updated: 2023/10/10 13:56:32 by mdorr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ int BitcoinExchange::fillMap(std::ifstream &file)
 			if (p)
 				_btcIndex.insert(*p);
 		}
-			
+
 	}
 	return (EXIT_SUCCESS);
 }
@@ -82,8 +82,14 @@ int	BitcoinExchange::getDb()
 
 void	BitcoinExchange::printMessage(std::string date, double value)
 {
-	std::map<std::string, double>	*node;
+	std::map<std::string, double>::iterator	node;
+	std::string 							newDate;
+
 	node = _btcIndex.find(date);
+	if (node == _btcIndex.end())
+		node = _btcIndex.find(findClosestKey(_btcIndex, date));
+
+	std::cout << date << " => " << value << " = " << node->second * value << std::endl;
 }
 
 
@@ -125,5 +131,3 @@ BitcoinExchange::~BitcoinExchange()
 {
 	std::cout << "BitcoinExchange default destructor called" << std::endl;
 }
-
-
