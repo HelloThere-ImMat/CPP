@@ -6,12 +6,14 @@
 /*   By: mdorr <mdorr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 14:19:14 by mdorr             #+#    #+#             */
-/*   Updated: 2023/10/06 11:33:45 by mdorr            ###   ########.fr       */
+/*   Updated: 2023/10/19 13:56:26 by mdorr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <vector>
+#include <stdlib.h>
+#include <time.h>
 
 class Span
 {

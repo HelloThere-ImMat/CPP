@@ -6,7 +6,7 @@
 /*   By: mdorr <mdorr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 13:46:23 by mdorr             #+#    #+#             */
-/*   Updated: 2023/10/05 14:02:03 by mdorr            ###   ########.fr       */
+/*   Updated: 2023/10/19 13:19:33 by mdorr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,12 @@ int main(void)
 	dq.push_back(0);
 
 	if (easyfind(v, 6) == EXIT_SUCCESS)
-		std::cout << "found it" << std::endl;
+		std::cout << "Success" << std::endl;
 	else
-		std::cout << "did not find it" << std::endl;
+		std::cout << "Failure" << std::endl;
 	if (easyfind(dq, 0) == EXIT_SUCCESS)
-		std::cout << "found it" << std::endl;
+		std::cout << "Success" << std::endl;
 	else
-		std::cout << "did not find it" << std::endl;
+		std::cout << "Failure" << std::endl;
 	return (0);
 }

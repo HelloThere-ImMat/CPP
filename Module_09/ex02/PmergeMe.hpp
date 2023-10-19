@@ -6,7 +6,7 @@
 /*   By: mdorr <mdorr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 15:16:20 by mdorr             #+#    #+#             */
-/*   Updated: 2023/10/16 16:46:37 by mdorr            ###   ########.fr       */
+/*   Updated: 2023/10/17 15:57:02 by mdorr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class PmergeMe
 	private :
 		std::vector<int>	_vec;
 		std::list<int>		_list;
-};
+}
 
 time_t  get_simulation_time(time_t start_time);
 time_t  get_time(void);

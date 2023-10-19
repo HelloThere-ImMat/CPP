@@ -6,7 +6,7 @@
 /*   By: mdorr <mdorr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 14:39:22 by mdorr             #+#    #+#             */
-/*   Updated: 2023/10/06 10:57:46 by mdorr            ###   ########.fr       */
+/*   Updated: 2023/10/19 14:03:55 by mdorr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ Span::Span(unsigned int N) : _size(N), _elementsNbr(0)
 
 Span::Span(const Span &other)
 {
+	std::cout << "Span copy constructor called" << std::endl;
 	int i = 0;
 	_size = other._size;
 	_elementsNbr = other._elementsNbr;
@@ -27,7 +28,6 @@ Span::Span(const Span &other)
 		_v.push_back(other._v[i]);
 		i++;
 	}
-	std::cout << "Span copy constructor called" << std::endl;
 }
 
 void Span::addNumber(int value)
@@ -63,14 +63,13 @@ unsigned int Span::longestSpan()
 	i = 0;
 	while (i < _elementsNbr - 1)
 	{
-		j = 1;
+		j = i + 1;
 		while (j < _elementsNbr)
 		{
 			diff = _v[i] - _v[j];
 			if (diff < 0)
 				diff *= -1;
-			if (diff > span)
-				span = diff;
+			span = std::max(span, diff);
 			j++;
 		}
 		i++;
@@ -81,8 +80,8 @@ unsigned int Span::longestSpan()
 unsigned int Span::shortestSpan()
 {
 	bool first = true;
-	int	prevSpan;
-	int span;
+	int	currShortestSpan;
+	int newSpan;
 	int i, j;
 
 	if (_elementsNbr == 0 || _elementsNbr == 1)
@@ -90,24 +89,24 @@ unsigned int Span::shortestSpan()
 	i = 0;
 	while (i < _elementsNbr - 1)
 	{
-		j = 1;
+		j = i + 1;
 		while (j < _elementsNbr)
 		{
-			span = _v[i] - _v[j];
-			if (span < 0)
-				span *= -1;
+			newSpan = _v[i] - _v[j];
+			if (newSpan < 0)
+				newSpan *= -1;
 			if (first == true)
 			{
-				prevSpan = span;
+				currShortestSpan = newSpan;
 				first = false;
 			}
-			if (span < prevSpan)
-				prevSpan = span;
+			currShortestSpan = std::min(newSpan, currShortestSpan);
+			std::cout << "Hola this is the :  " << currShortestSpan << std::endl;
 			j++;
 		}
 		i++;
 	}
-	return (span);
+	return (currShortestSpan);
 }
 
 Span::~Span()
