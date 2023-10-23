@@ -6,7 +6,7 @@
 /*   By: mdorr <mdorr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 15:16:20 by mdorr             #+#    #+#             */
-/*   Updated: 2023/10/21 15:36:52 by mdorr            ###   ########.fr       */
+/*   Updated: 2023/10/23 14:24:06 by mdorr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <vector>
 #include <deque>
 #include <ctime>
+#include <sys/time.h>
 #include <algorithm>
 
 #include "Pair.hpp"
@@ -30,11 +31,13 @@ class PmergeMe
 		PmergeMe &operator=(const PmergeMe &asssign);
 		~PmergeMe() {}
 		void	fillContainers(char **av);
-		void	printContainers();
+		void	printContainers(bool before);
 		void	printPairs();
 		void	createPairs();
 		void	sortMainChain();
 		void	sortVec();
+		void	sortDeq();
+		int		getElementsNb();
 	private :
 		std::vector<int>	_Jacobsthal;
 		std::vector<int>	_JacobRest;
@@ -43,7 +46,9 @@ class PmergeMe
 		std::vector<Pair>	_pairVec;
 		std::deque<Pair>	_pairDeq;
 		int					_lastJacobUsed;
+		int					_elementsNb;
 		int					findNextJacobsthal(int i);
-		int					binarySearch(int value);
+		int					binarySearch(int start, int end, int value);
 		void				insertInVec(int pairIndex);
+		void				insertInDeq(int pairIndex);
 };

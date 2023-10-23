@@ -6,7 +6,7 @@
 /*   By: mdorr <mdorr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 15:20:38 by mdorr             #+#    #+#             */
-/*   Updated: 2023/10/21 15:39:54 by mdorr            ###   ########.fr       */
+/*   Updated: 2023/10/23 14:10:29 by mdorr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,35 +73,72 @@ int PmergeMe::findNextJacobsthal(int i)
 
 void PmergeMe::insertInVec(int pairIndex)
 {
-	int		pos = this->binarySearch(_pairVec[pairIndex]._small);
+	std::vector<int>::iterator bigValue = std::find(_vec.begin(), _vec.end(), _pairVec[pairIndex]._big);
+	int					bValueIndex = std::distance(_vec.begin(), bigValue);
+
+	int		pos = this->binarySearch(0, bValueIndex, _pairVec[pairIndex]._small);
 
 	_vec.insert(_vec.begin() + pos, _pairVec[pairIndex]._small);
 }
 
-//returns the index where the value should be inserted
-int PmergeMe::binarySearch(int value)
+void PmergeMe::insertInDeq(int pairIndex)
 {
-	
+	std::deque<int>::iterator bigValue = std::find(_deq.begin(), _deq.end(), _pairDeq[pairIndex]._big);
+	int					bValueIndex = std::distance(_deq.begin(), bigValue);
+
+	int		pos = this->binarySearch(0, bValueIndex, _pairDeq[pairIndex]._small);
+
+	_deq.insert(_deq.begin() + pos, _pairDeq[pairIndex]._small);
+}
+
+//returns the index where the value should be inserted
+int PmergeMe::binarySearch(int start, int end, int value)
+{
+	int step = end - start;
+	int	middle = start + step / 2;
+
+	if (value == _vec[middle])
+		return (middle);
+	else if (value < _vec[middle])
+	{
+		if (step > 1)
+			return (this->binarySearch(start, middle - 1, value));
+		else
+			return (start);
+	}
+	else if (value > _vec[middle])
+	{
+		if (step > 0)
+			return (this->binarySearch(middle + 1, end, value));
+		else
+			return (end + 1);
+	}
+	return (-1);
 }
 
 	//PUBLIC
 
 		//DEBUG
 
-void	PmergeMe::printContainers()
+void	PmergeMe::printContainers(bool before)
 {
 	std::vector<int>::iterator	it;
 
+	if (before)
+		std::cout << "Before: ";
+	else
+		std::cout << "After: ";
 	for(it = _vec.begin() ; it != _vec.end() ; it++)
-		std::cout << "vec : " << *it << std::endl;
+		std::cout << *it << " ";
+	std::cout << std::endl;
 }
 
 void	PmergeMe::printPairs()
 {
-	std::deque<Pair>::iterator it;
+	std::vector<Pair>::iterator it;
 	int					i = 0;
 
-	for (it = _pairDeq.begin(); it != _pairDeq.end(); it++)
+	for (it = _pairVec.begin(); it != _pairVec.end(); it++)
 	{
 		std::cout << "Printing pair nb " << i << std::endl;
 		std::cout << "small : " << it->_small << " - big : " << it->_big << std::endl;
@@ -129,6 +166,7 @@ void	PmergeMe::fillContainers(char **av)
 			throw ("Int out of range");
 		i++;
 	}
+	_elementsNb = _vec.size();
 }
 
 void	PmergeMe::createPairs()
@@ -162,8 +200,7 @@ void PmergeMe::sortMainChain()
 void PmergeMe::sortVec()
 {
 	std::vector<Pair>::iterator pIt;
-	int							elementsNb = _vec.size();
-	int							i = 0;
+	int							i = 1;
 	int							tmpJacob;
 
 	_vec.clear();
@@ -171,13 +208,9 @@ void PmergeMe::sortVec()
 	{
 		if (pIt->_big != -1)
 			_vec.push_back(pIt->_big);
-		else
-			_vec.insert(_vec.begin(), pIt->_small);
 	}
-	std::cout << "----------STARTING POINT------------" << std::endl;
-	this->printContainers();
-	std::cout << "PRINTING JACOB INDEXES" << std::endl;
-	while (i < elementsNb)
+	_vec.insert(_vec.begin(), _pairVec[0]._small);
+	while (i < static_cast<int>(_pairVec.size()))
 	{
 		tmpJacob = this->findNextJacobsthal(i);
 		if (tmpJacob != -1)
@@ -191,4 +224,36 @@ void PmergeMe::sortVec()
 	}
 };
 
+void PmergeMe::sortDeq()
+{
+	std::deque<Pair>::iterator pIt;
+	int							i = 1;
+	int							tmpJacob;
 
+	_deq.clear();
+	for (pIt = _pairDeq.begin(); pIt != _pairDeq.end(); pIt++)
+	{
+		if (pIt->_big != -1)
+			_deq.push_back(pIt->_big);
+	}
+	_deq.insert(_deq.begin(), _pairDeq[0]._small);
+	while (i < static_cast<int>(_pairDeq.size()))
+	{
+		tmpJacob = this->findNextJacobsthal(i);
+		if (tmpJacob != -1)
+			this->insertInDeq(tmpJacob);
+		i++;
+	}
+	if (_JacobRest.empty() == false)
+	{
+		for (std::vector<int>::iterator jIt = _JacobRest.begin(); jIt != _JacobRest.end(); jIt++)
+			this->insertInDeq(*jIt);
+	}
+}
+
+		//GETTER
+
+int	PmergeMe::getElementsNb()
+{
+	return (_elementsNb);
+}
