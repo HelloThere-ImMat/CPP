@@ -6,12 +6,14 @@ SRCS_PATH = srcs/
 
 SRCS += main.cpp
 SRCS += PmergeMe.cpp
+SRCS += Pair.cpp
 
 vpath %.cpp $(SRCS_PATH)
 
 DEPS_PATH = includes/
 
 DEPS += PmergeMe.hpp
+DEPS += Pair.hpp
 
 vpath %.hpp $(DEPS_PATH)
 
