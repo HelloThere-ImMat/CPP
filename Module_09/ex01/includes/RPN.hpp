@@ -6,7 +6,7 @@
 /*   By: mdorr <mdorr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 14:24:14 by mdorr             #+#    #+#             */
-/*   Updated: 2023/10/25 13:56:23 by mdorr            ###   ########.fr       */
+/*   Updated: 2023/10/25 16:03:16 by mdorr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,11 @@ class RPN
 		RPN() {}
 		RPN(const RPN &other);
 		RPN &operator=(const RPN &assign);
-		int		fillstacks(char *str);
+		//int		fillstacks(char *str);
 		void	printStack();
-		void	displaySolution();
+		//void	reverseStacks();
+		//void	displaySolution();
+		void	makeCalculation(char *str);
 		~RPN() {}
 };
 
