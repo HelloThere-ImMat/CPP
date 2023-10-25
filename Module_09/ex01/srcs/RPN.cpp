@@ -6,7 +6,7 @@
 /*   By: mdorr <mdorr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 12:31:32 by mdorr             #+#    #+#             */
-/*   Updated: 2023/10/13 15:36:05 by mdorr            ###   ########.fr       */
+/*   Updated: 2023/10/25 13:58:32 by mdorr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -135,5 +135,5 @@ void RPN::displaySolution()
 		_operands.push(res);
 		_operators.pop();
 	}
-	std::cout << "The result is : " << _operands.top() << std::endl;
+	std::cout << _operands.top() << std::endl;
 }

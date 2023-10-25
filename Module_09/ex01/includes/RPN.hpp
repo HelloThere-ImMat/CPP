@@ -6,7 +6,7 @@
 /*   By: mdorr <mdorr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 14:24:14 by mdorr             #+#    #+#             */
-/*   Updated: 2023/10/13 16:56:34 by mdorr            ###   ########.fr       */
+/*   Updated: 2023/10/25 13:56:23 by mdorr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include <cstdlib>
 #include <string>
 #include <stack>
+#include <limits.h>
 
 typedef enum e_operators
 {
