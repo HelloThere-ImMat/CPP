@@ -6,7 +6,7 @@
 /*   By: mdorr <mdorr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 14:41:24 by mdorr             #+#    #+#             */
-/*   Updated: 2023/10/10 14:17:19 by mdorr            ###   ########.fr       */
+/*   Updated: 2023/10/31 14:01:06 by mdorr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,7 +106,9 @@ int	BitcoinExchange::BtcCalculator(std::ifstream &input)
 	while (input.eof() == false)
 	{
 		std::getline(input, line);
-		if (!line.empty())
+		if (line.size() < 10)
+			printError(e_input, line, 0);
+		else if (!line.empty())
 		{
 			if (testDate(line.substr(0, 10), &date) == EXIT_SUCCESS &&
 				testValue(line, &value) == EXIT_SUCCESS)
