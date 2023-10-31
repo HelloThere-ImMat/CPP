@@ -6,7 +6,7 @@
 /*   By: mdorr <mdorr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 12:31:32 by mdorr             #+#    #+#             */
-/*   Updated: 2023/10/25 16:04:15 by mdorr            ###   ########.fr       */
+/*   Updated: 2023/10/28 14:12:42 by mdorr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,6 @@ void RPN::makeCalculation(char *str)
 		}
 		else
 			_operands.push(atoi(token.c_str()));
-		this->printStack();
 	}
 	std::cout << _operands.top() << std::endl;
 }
