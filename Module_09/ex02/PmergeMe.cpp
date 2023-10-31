@@ -6,7 +6,7 @@
 /*   By: mdorr <mdorr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 15:20:38 by mdorr             #+#    #+#             */
-/*   Updated: 2023/10/28 16:40:52 by mdorr            ###   ########.fr       */
+/*   Updated: 2023/10/31 11:31:00 by mdorr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,25 +71,25 @@ int PmergeMe::findNextJacobsthal(int i)
 	return (-1);
 }
 
-// void PmergeMe::insertInVec(int pairIndex)
-// {
-// 	std::vector<int>::iterator bigValue = std::find(_vec.begin(), _vec.end(), _pairVec[pairIndex]._big);
-// 	int					bValueIndex = std::distance(_vec.begin(), bigValue);
+ void PmergeMe::insertInVec(int pairIndex)
+ {
+ 	std::vector<int>::iterator bigValue = std::find(_vec.begin(), _vec.end(), _pairVec[pairIndex]._big);
+ 	int					bValueIndex = std::distance(_vec.begin(), bigValue);
 
-// 	int		pos = this->binarySearch(0, bValueIndex, _pairVec[pairIndex]._small);
+ 	int		pos = this->binarySearch(0, bValueIndex, _pairVec[pairIndex]._small);
 
-// 	_vec.insert(_vec.begin() + pos, _pairVec[pairIndex]._small);
-// }
+ 	_vec.insert(_vec.begin() + pos, _pairVec[pairIndex]._small);
+ }
 
-// void PmergeMe::insertInDeq(int pairIndex)
-// {
-// 	std::deque<int>::iterator bigValue = std::find(_deq.begin(), _deq.end(), _pairDeq[pairIndex]._big);
-// 	int					bValueIndex = std::distance(_deq.begin(), bigValue);
+ void PmergeMe::insertInDeq(int pairIndex)
+ {
+ 	std::deque<int>::iterator bigValue = std::find(_deq.begin(), _deq.end(), _pairDeq[pairIndex]._big);
+ 	int					bValueIndex = std::distance(_deq.begin(), bigValue);
 
-// 	int		pos = this->binarySearch(0, bValueIndex, _pairDeq[pairIndex]._small);
+ 	int		pos = this->binarySearch(0, bValueIndex, _pairDeq[pairIndex]._small);
 
-// 	_deq.insert(_deq.begin() + pos, _pairDeq[pairIndex]._small);
-// }
+ 	_deq.insert(_deq.begin() + pos, _pairDeq[pairIndex]._small);
+ }
 
 //returns the index where the value should be inserted
 int PmergeMe::binarySearch(int start, int end, int value)
@@ -197,59 +197,59 @@ void PmergeMe::sortMainChain()
 	std::sort(_pairDeq.begin(), _pairDeq.end());
 }
 
-// void PmergeMe::sortVec()
-// {
-// 	std::vector<Pair>::iterator pIt;
-// 	int							i = 1;
-// 	int							tmpJacob;
+ void PmergeMe::sortVec()
+ {
+ 	std::vector<Pair>::iterator pIt;
+ 	int							i = 1;
+ 	int							tmpJacob;
 
-// 	_vec.clear();
-// 	for (pIt = _pairVec.begin(); pIt != _pairVec.end(); pIt++)
-// 	{
-// 		if (pIt->_big != -1)
-// 			_vec.push_back(pIt->_big);
-// 	}
-// 	_vec.insert(_vec.begin(), _pairVec[0]._small);
-// 	while (i < static_cast<int>(_pairVec.size()))
-// 	{
-// 		tmpJacob = this->findNextJacobsthal(i);
-// 		if (tmpJacob != -1)
-// 			this->insertInVec(tmpJacob);
-// 		i++;
-// 	}
-// 	if (_JacobRest.empty() == false)
-// 	{
-// 		for (std::vector<int>::iterator jIt = _JacobRest.begin(); jIt != _JacobRest.end(); jIt++)
-// 			this->insertInVec(*jIt);
-// 	}
-// };
+ 	_vec.clear();
+ 	for (pIt = _pairVec.begin(); pIt != _pairVec.end(); pIt++)
+ 	{
+ 		if (pIt->_big != -1)
+ 			_vec.push_back(pIt->_big);
+ 	}
+ 	_vec.insert(_vec.begin(), _pairVec[0]._small);
+ 	while (i < static_cast<int>(_pairVec.size()))
+ 	{
+ 		tmpJacob = this->findNextJacobsthal(i);
+ 		if (tmpJacob != -1)
+ 			this->insertInVec(tmpJacob);
+ 		i++;
+ 	}
+ 	if (_JacobRest.empty() == false)
+ 	{
+ 		for (std::vector<int>::iterator jIt = _JacobRest.begin(); jIt != _JacobRest.end(); jIt++)
+ 			this->insertInVec(*jIt);
+ 	}
+ };
 
-// void PmergeMe::sortDeq()
-// {
-// 	std::deque<Pair>::iterator pIt;
-// 	int							i = 1;
-// 	int							tmpJacob;
+ void PmergeMe::sortDeq()
+ {
+ 	std::deque<Pair>::iterator pIt;
+ 	int							i = 1;
+ 	int							tmpJacob;
 
-// 	_deq.clear();
-// 	for (pIt = _pairDeq.begin(); pIt != _pairDeq.end(); pIt++)
-// 	{
-// 		if (pIt->_big != -1)
-// 			_deq.push_back(pIt->_big);
-// 	}
-// 	_deq.insert(_deq.begin(), _pairDeq[0]._small);
-// 	while (i < static_cast<int>(_pairDeq.size()))
-// 	{
-// 		tmpJacob = this->findNextJacobsthal(i);
-// 		if (tmpJacob != -1)
-// 			this->insertInDeq(tmpJacob);
-// 		i++;
-// 	}
-// 	if (_JacobRest.empty() == false)
-// 	{
-// 		for (std::vector<int>::iterator jIt = _JacobRest.begin(); jIt != _JacobRest.end(); jIt++)
-// 			this->insertInDeq(*jIt);
-// 	}
-// }
+ 	_deq.clear();
+ 	for (pIt = _pairDeq.begin(); pIt != _pairDeq.end(); pIt++)
+ 	{
+ 		if (pIt->_big != -1)
+ 			_deq.push_back(pIt->_big);
+ 	}
+ 	_deq.insert(_deq.begin(), _pairDeq[0]._small);
+ 	while (i < static_cast<int>(_pairDeq.size()))
+ 	{
+ 		tmpJacob = this->findNextJacobsthal(i);
+ 		if (tmpJacob != -1)
+ 			this->insertInDeq(tmpJacob);
+ 		i++;
+ 	}
+ 	if (_JacobRest.empty() == false)
+ 	{
+ 		for (std::vector<int>::iterator jIt = _JacobRest.begin(); jIt != _JacobRest.end(); jIt++)
+ 			this->insertInDeq(*jIt);
+ 	}
+ }
 
 		//GETTER
 

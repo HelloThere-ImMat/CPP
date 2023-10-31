@@ -6,7 +6,7 @@
 /*   By: mdorr <mdorr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 15:16:20 by mdorr             #+#    #+#             */
-/*   Updated: 2023/10/28 16:43:11 by mdorr            ###   ########.fr       */
+/*   Updated: 2023/10/31 11:32:30 by mdorr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 #include <ctime>
 #include <sys/time.h>
 #include <algorithm>
+#include <errno.h>
 
 #include "Pair.hpp"
 
@@ -52,42 +53,3 @@ class PmergeMe
 		void				insertInVec(int pairIndex);
 		void				insertInDeq(int pairIndex);
 };
-
-template <typename T>
-void insertInCont(const T<int> cont, int pairIndex)
-{
-	std::T<int>::iterator bigValue = std::find(cont.begin(), cont.end(), _pairVec[pairIndex]._big);
-	int					bValueIndex = std::distance(cont.begin(), bigValue);
-
-	int		pos = this->binarySearch(0, bValueIndex, _pairVec[pairIndex]._small);
-
-	cont.insert(cont.begin() + pos, _pairVec[pairIndex]._small);
-}
-
-template <typename T>
-void	sortCont(const T<int> cont)
-{
-	std::T<Pair>::iterator	pIt;
-	int						i = 1;
-	int						tmpJacob;
-
-	cont.clear();
-	for (pIt = _pairVec.begin(); pIt != _pairVec.end(); pIt++)
-	{
-		if (pIt->_big != -1)
-			cont.push_back(pIt->_big);
-	}
-	cont.insert(cont.begin(), _pairVec[0]._small);
-	while (i < static_cast<int>(_pairVec.size()))
-	{
-		tmpJacob = this->findNextJacobsthal(i);
-		if (tmpJacob != -1)
-			this->insertInVec(tmpJacob);
-		i++;
-	}
-	if (_JacobRest.empty() == false)
-	{
-		for (std::vector<int>::iterator jIt = _JacobRest.begin(); jIt != _JacobRest.end(); jIt++)
-			insertInCont(cont, *jIt);
-	}
-}
