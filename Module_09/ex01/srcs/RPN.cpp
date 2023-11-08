@@ -6,7 +6,7 @@
 /*   By: mdorr <mdorr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 12:31:32 by mdorr             #+#    #+#             */
-/*   Updated: 2023/11/08 10:39:39 by mdorr            ###   ########.fr       */
+/*   Updated: 2023/11/08 12:09:15 by mdorr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,8 @@ void RPN::makeCalculation(char *str)
 		else
 			_operands.push(atoi(token.c_str()));
 	}
+	if (_operands.size() != 1)
+		throw ("Insuficient number of operators to perform operation");
 	std::cout << _operands.top() << std::endl;
 }
 
