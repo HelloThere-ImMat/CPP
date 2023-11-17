@@ -6,7 +6,7 @@
 /*   By: mdorr <mdorr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 15:20:57 by mdorr             #+#    #+#             */
-/*   Updated: 2023/10/23 14:25:19 by mdorr            ###   ########.fr       */
+/*   Updated: 2023/11/17 11:16:00 by mdorr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,13 @@ int main(int argc, char **argv)
 	std::time_t				tMid;
 	std::time_t				tVec;
 	std::time_t				tDeq;
-	(void)argc;
 
+
+	if (argc < 2)
+	{
+		std::cerr << "Error: This program take a minimum of 1 argument" << std::endl;
+		return (1);
+	}
 	try
 	{
 		pmm.fillContainers(argv);
@@ -48,7 +53,7 @@ int main(int argc, char **argv)
 	}
 	catch (const char *e_message)
 	{
-		std::cout << "Error : " << e_message << std::endl;
+		std::cerr << "Error: " << e_message << std::endl;
 	}
 	return (0);
 }

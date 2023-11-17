@@ -6,7 +6,7 @@
 /*   By: mdorr <mdorr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 11:36:07 by mdorr             #+#    #+#             */
-/*   Updated: 2023/10/10 14:16:03 by mdorr            ###   ########.fr       */
+/*   Updated: 2023/11/17 12:15:21 by mdorr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ int testValue(std::string line, double *value)
 		return (printError(e_input, line, 0));
 	}
 	*value = atof(valueStr.c_str());
-	if ((valueStr != "0" && *value == 0) || *value < 0 || *value > 2147483647)
+	if ((valueStr != "0" && *value == 0) || *value < 0 || *value > 1000)
 		return (printError(e_value, valueStr, *value));
 	return (EXIT_SUCCESS);
 }
